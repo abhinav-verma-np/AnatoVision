@@ -1,0 +1,11 @@
+# AnatoVision backend — runtime dependencies.
+#
+# Kept to exactly what Phase 1 uses. Deliberately NOT included yet, even
+# though they're in the locked tech stack: SQLAlchemy/asyncpg, redis-py,
+# pydicom, vtk.js/itk.js bindings. Those get added in the phase that first
+# needs persistence or DICOM parsing — adding them now would be an
+# unnecessary, unused dependency per the project constitution.
+
+fastapi[standard]==0.141.1
+pydantic==2.9.2
+pydantic-settings==2.6.1

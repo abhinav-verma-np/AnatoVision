@@ -1,0 +1,2142 @@
+{
+  "1-skeletal-system": {
+    "available": true,
+    "path": "/models/unclassified/1-skeletal-system.glb",
+    "system": "unclassified"
+  },
+  "2-muscular-insertions": {
+    "available": true,
+    "path": "/models/unclassified/2-muscular-insertions.glb",
+    "system": "unclassified"
+  },
+  "3-joints": {
+    "available": true,
+    "path": "/models/unclassified/3-joints.glb",
+    "system": "unclassified"
+  },
+  "4-muscular-system": {
+    "available": true,
+    "path": "/models/unclassified/4-muscular-system.glb",
+    "system": "unclassified"
+  },
+  "5-cardiovascular-system": {
+    "available": true,
+    "path": "/models/unclassified/5-cardiovascular-system.glb",
+    "system": "unclassified"
+  },
+  "6-lymphoid-organs": {
+    "available": true,
+    "path": "/models/unclassified/6-lymphoid-organs.glb",
+    "system": "unclassified"
+  },
+  "7-nervous-system-sense-organs": {
+    "available": true,
+    "path": "/models/unclassified/7-nervous-system-sense-organs.glb",
+    "system": "unclassified"
+  },
+  "8-visceral-systems": {
+    "available": true,
+    "path": "/models/unclassified/8-visceral-systems.glb",
+    "system": "unclassified"
+  },
+  "9-regions-of-human-body": {
+    "available": true,
+    "path": "/models/unclassified/9-regions-of-human-body.glb",
+    "system": "unclassified"
+  },
+  "abdomen": {
+    "available": true,
+    "path": "/models/unclassified/abdomen.glb",
+    "system": "unclassified"
+  },
+  "abdominal-part-of-muscular-system": {
+    "available": true,
+    "path": "/models/unclassified/abdominal-part-of-muscular-system.glb",
+    "system": "unclassified"
+  },
+  "accessory-nerve-xi": {
+    "available": true,
+    "path": "/models/nervous/accessory-nerve-xi.glb",
+    "system": "nervous"
+  },
+  "accessory-visual-structures": {
+    "available": true,
+    "path": "/models/unclassified/accessory-visual-structures.glb",
+    "system": "unclassified"
+  },
+  "acromial-end": {
+    "available": true,
+    "path": "/models/skeletal/acromial-end.glb",
+    "system": "skeletal"
+  },
+  "acromioclavicular-joint": {
+    "available": true,
+    "path": "/models/muscular/acromioclavicular-joint.glb",
+    "system": "muscular"
+  },
+  "amygdaloid-body": {
+    "available": true,
+    "path": "/models/nervous/amygdaloid-body.glb",
+    "system": "nervous"
+  },
+  "anal-region": {
+    "available": true,
+    "path": "/models/unclassified/anal-region.glb",
+    "system": "unclassified"
+  },
+  "antebrachial-region": {
+    "available": true,
+    "path": "/models/unclassified/antebrachial-region.glb",
+    "system": "unclassified"
+  },
+  "anterior-commissure": {
+    "available": true,
+    "path": "/models/nervous/anterior-commissure.glb",
+    "system": "nervous"
+  },
+  "anterior-compartment-of-arm": {
+    "available": true,
+    "path": "/models/muscular/anterior-compartment-of-arm.glb",
+    "system": "muscular"
+  },
+  "anterior-compartment-of-forearm": {
+    "available": true,
+    "path": "/models/muscular/anterior-compartment-of-forearm.glb",
+    "system": "muscular"
+  },
+  "anterior-compartment-of-leg": {
+    "available": true,
+    "path": "/models/muscular/anterior-compartment-of-leg.glb",
+    "system": "muscular"
+  },
+  "anterior-compartment-of-thigh": {
+    "available": true,
+    "path": "/models/muscular/anterior-compartment-of-thigh.glb",
+    "system": "muscular"
+  },
+  "anterior-horn-of-spinal-cord": {
+    "available": true,
+    "path": "/models/nervous/anterior-horn-of-spinal-cord.glb",
+    "system": "nervous"
+  },
+  "anterior-rami-of-lumbar-nerves": {
+    "available": true,
+    "path": "/models/nervous/anterior-rami-of-lumbar-nerves.glb",
+    "system": "nervous"
+  },
+  "anterior-region-of-arm": {
+    "available": true,
+    "path": "/models/unclassified/anterior-region-of-arm.glb",
+    "system": "unclassified"
+  },
+  "anterior-region-of-elbow": {
+    "available": true,
+    "path": "/models/unclassified/anterior-region-of-elbow.glb",
+    "system": "unclassified"
+  },
+  "anterior-region-of-neck": {
+    "available": true,
+    "path": "/models/unclassified/anterior-region-of-neck.glb",
+    "system": "unclassified"
+  },
+  "anterior-region-of-thigh": {
+    "available": true,
+    "path": "/models/unclassified/anterior-region-of-thigh.glb",
+    "system": "unclassified"
+  },
+  "anterior-region-of-thorax": {
+    "available": true,
+    "path": "/models/unclassified/anterior-region-of-thorax.glb",
+    "system": "unclassified"
+  },
+  "anterior-teeth": {
+    "available": true,
+    "path": "/models/unclassified/anterior-teeth.glb",
+    "system": "unclassified"
+  },
+  "anterolateral-surface-of-arytenoid-cartilage": {
+    "available": true,
+    "path": "/models/unclassified/anterolateral-surface-of-arytenoid-cartilage.glb",
+    "system": "unclassified"
+  },
+  "appendicular-skeleton": {
+    "available": true,
+    "path": "/models/skeletal/appendicular-skeleton.glb",
+    "system": "skeletal"
+  },
+  "arytenoid-cartilage": {
+    "available": true,
+    "path": "/models/unclassified/arytenoid-cartilage.glb",
+    "system": "unclassified"
+  },
+  "atlas": {
+    "available": true,
+    "path": "/models/skeletal/atlas.glb",
+    "system": "skeletal"
+  },
+  "auditory-ossicles": {
+    "available": true,
+    "path": "/models/unclassified/auditory-ossicles.glb",
+    "system": "unclassified"
+  },
+  "auricular-region": {
+    "available": true,
+    "path": "/models/unclassified/auricular-region.glb",
+    "system": "unclassified"
+  },
+  "axial-skeleton": {
+    "available": true,
+    "path": "/models/skeletal/axial-skeleton.glb",
+    "system": "skeletal"
+  },
+  "axillary-nerve": {
+    "available": true,
+    "path": "/models/nervous/axillary-nerve.glb",
+    "system": "nervous"
+  },
+  "back": {
+    "available": true,
+    "path": "/models/unclassified/back.glb",
+    "system": "unclassified"
+  },
+  "basal-forebrain": {
+    "available": true,
+    "path": "/models/nervous/basal-forebrain.glb",
+    "system": "nervous"
+  },
+  "base-of-arythenoid-cartilage": {
+    "available": true,
+    "path": "/models/unclassified/base-of-arythenoid-cartilage.glb",
+    "system": "unclassified"
+  },
+  "basilar-part-of-occipital-bone": {
+    "available": true,
+    "path": "/models/skeletal/basilar-part-of-occipital-bone.glb",
+    "system": "skeletal"
+  },
+  "bifurcate-ligament": {
+    "available": true,
+    "path": "/models/skeletal/bifurcate-ligament.glb",
+    "system": "skeletal"
+  },
+  "body-of-clavicle": {
+    "available": true,
+    "path": "/models/skeletal/body-of-clavicle.glb",
+    "system": "skeletal"
+  },
+  "body-of-rib": {
+    "available": true,
+    "path": "/models/skeletal/body-of-rib.glb",
+    "system": "skeletal"
+  },
+  "body-of-sphenoid-bone": {
+    "available": true,
+    "path": "/models/skeletal/body-of-sphenoid-bone.glb",
+    "system": "skeletal"
+  },
+  "bones-of-free-lower-limb": {
+    "available": true,
+    "path": "/models/skeletal/bones-of-free-lower-limb.glb",
+    "system": "skeletal"
+  },
+  "bones-of-lower-limb": {
+    "available": true,
+    "path": "/models/skeletal/bones-of-lower-limb.glb",
+    "system": "skeletal"
+  },
+  "bones-of-pectoral-girdle": {
+    "available": true,
+    "path": "/models/muscular/bones-of-pectoral-girdle.glb",
+    "system": "muscular"
+  },
+  "bones-of-upper-limb": {
+    "available": true,
+    "path": "/models/skeletal/bones-of-upper-limb.glb",
+    "system": "skeletal"
+  },
+  "bonus-collection": {
+    "available": true,
+    "path": "/models/unclassified/bonus-collection.glb",
+    "system": "unclassified"
+  },
+  "bony-pelvis": {
+    "available": true,
+    "path": "/models/skeletal/bony-pelvis.glb",
+    "system": "skeletal"
+  },
+  "brachial-plexus": {
+    "available": true,
+    "path": "/models/nervous/brachial-plexus.glb",
+    "system": "nervous"
+  },
+  "brachial-region": {
+    "available": true,
+    "path": "/models/unclassified/brachial-region.glb",
+    "system": "unclassified"
+  },
+  "brain": {
+    "available": true,
+    "path": "/models/nervous/brain.glb",
+    "system": "nervous"
+  },
+  "brainstem": {
+    "available": true,
+    "path": "/models/nervous/brainstem.glb",
+    "system": "nervous"
+  },
+  "branches-of-anterior-part-of-lumbar-plexus": {
+    "available": true,
+    "path": "/models/nervous/branches-of-anterior-part-of-lumbar-plexus.glb",
+    "system": "nervous"
+  },
+  "branches-of-lateral-cord-of-brachial-plexus": {
+    "available": true,
+    "path": "/models/nervous/branches-of-lateral-cord-of-brachial-plexus.glb",
+    "system": "nervous"
+  },
+  "branches-of-medial-cord-of-brachial-plexus": {
+    "available": true,
+    "path": "/models/nervous/branches-of-medial-cord-of-brachial-plexus.glb",
+    "system": "nervous"
+  },
+  "branches-of-posterior-cord-of-brachial-plexus": {
+    "available": true,
+    "path": "/models/nervous/branches-of-posterior-cord-of-brachial-plexus.glb",
+    "system": "nervous"
+  },
+  "branches-of-posterior-part-of-lumbar-plexus": {
+    "available": true,
+    "path": "/models/nervous/branches-of-posterior-part-of-lumbar-plexus.glb",
+    "system": "nervous"
+  },
+  "bronchi": {
+    "available": true,
+    "path": "/models/respiratory/bronchi.glb",
+    "system": "respiratory"
+  },
+  "bursae": {
+    "available": true,
+    "path": "/models/unclassified/bursae.glb",
+    "system": "unclassified"
+  },
+  "calcaneal-tuberosity": {
+    "available": true,
+    "path": "/models/skeletal/calcaneal-tuberosity.glb",
+    "system": "skeletal"
+  },
+  "calcaneocuboid-joint": {
+    "available": true,
+    "path": "/models/skeletal/calcaneocuboid-joint.glb",
+    "system": "skeletal"
+  },
+  "calcaneus": {
+    "available": true,
+    "path": "/models/skeletal/calcaneus.glb",
+    "system": "skeletal"
+  },
+  "carpal-region": {
+    "available": true,
+    "path": "/models/skeletal/carpal-region.glb",
+    "system": "skeletal"
+  },
+  "carpometacarpal-joints": {
+    "available": true,
+    "path": "/models/skeletal/carpometacarpal-joints.glb",
+    "system": "skeletal"
+  },
+  "cartilages": {
+    "available": true,
+    "path": "/models/unclassified/cartilages.glb",
+    "system": "unclassified"
+  },
+  "cartilaginous-joints-of-pelvic-girdle": {
+    "available": true,
+    "path": "/models/unclassified/cartilaginous-joints-of-pelvic-girdle.glb",
+    "system": "unclassified"
+  },
+  "caudate-nucleus": {
+    "available": true,
+    "path": "/models/nervous/caudate-nucleus.glb",
+    "system": "nervous"
+  },
+  "central-mesencephalic-structures": {
+    "available": true,
+    "path": "/models/nervous/central-mesencephalic-structures.glb",
+    "system": "nervous"
+  },
+  "central-nervous-system": {
+    "available": true,
+    "path": "/models/unclassified/central-nervous-system.glb",
+    "system": "unclassified"
+  },
+  "cerebellar-peduncles": {
+    "available": true,
+    "path": "/models/nervous/cerebellar-peduncles.glb",
+    "system": "nervous"
+  },
+  "cerebellum": {
+    "available": true,
+    "path": "/models/nervous/cerebellum.glb",
+    "system": "nervous"
+  },
+  "cerebral-hemisphere": {
+    "available": true,
+    "path": "/models/nervous/cerebral-hemisphere.glb",
+    "system": "nervous"
+  },
+  "cerebrum": {
+    "available": true,
+    "path": "/models/nervous/cerebrum.glb",
+    "system": "nervous"
+  },
+  "cervical-nerves": {
+    "available": true,
+    "path": "/models/nervous/cervical-nerves.glb",
+    "system": "nervous"
+  },
+  "cervical-plexus": {
+    "available": true,
+    "path": "/models/nervous/cervical-plexus.glb",
+    "system": "nervous"
+  },
+  "cervical-vertebra": {
+    "available": true,
+    "path": "/models/skeletal/cervical-vertebra.glb",
+    "system": "skeletal"
+  },
+  "cervical-vertebrae": {
+    "available": true,
+    "path": "/models/skeletal/cervical-vertebrae.glb",
+    "system": "skeletal"
+  },
+  "coccyx": {
+    "available": true,
+    "path": "/models/skeletal/coccyx.glb",
+    "system": "skeletal"
+  },
+  "cochlea": {
+    "available": true,
+    "path": "/models/unclassified/cochlea.glb",
+    "system": "unclassified"
+  },
+  "cochlear-nerve": {
+    "available": true,
+    "path": "/models/nervous/cochlear-nerve.glb",
+    "system": "nervous"
+  },
+  "commissural-fibres-of-telencephalon": {
+    "available": true,
+    "path": "/models/nervous/commissural-fibres-of-telencephalon.glb",
+    "system": "nervous"
+  },
+  "common-fibular-nerve": {
+    "available": true,
+    "path": "/models/skeletal/common-fibular-nerve.glb",
+    "system": "skeletal"
+  },
+  "concha-of-auricle": {
+    "available": true,
+    "path": "/models/unclassified/concha-of-auricle.glb",
+    "system": "unclassified"
+  },
+  "coracoclavicular-ligament": {
+    "available": true,
+    "path": "/models/muscular/coracoclavicular-ligament.glb",
+    "system": "muscular"
+  },
+  "corpus-callosum": {
+    "available": true,
+    "path": "/models/nervous/corpus-callosum.glb",
+    "system": "nervous"
+  },
+  "corpus-striatum": {
+    "available": true,
+    "path": "/models/nervous/corpus-striatum.glb",
+    "system": "nervous"
+  },
+  "costal-cartilages": {
+    "available": true,
+    "path": "/models/skeletal/costal-cartilages.glb",
+    "system": "skeletal"
+  },
+  "costotransverse-joint": {
+    "available": true,
+    "path": "/models/skeletal/costotransverse-joint.glb",
+    "system": "skeletal"
+  },
+  "cranial-dura": {
+    "available": true,
+    "path": "/models/unclassified/cranial-dura.glb",
+    "system": "unclassified"
+  },
+  "cranial-nerves": {
+    "available": true,
+    "path": "/models/nervous/cranial-nerves.glb",
+    "system": "nervous"
+  },
+  "cranial-pia": {
+    "available": true,
+    "path": "/models/unclassified/cranial-pia.glb",
+    "system": "unclassified"
+  },
+  "cranial-syndesmosis": {
+    "available": true,
+    "path": "/models/skeletal/cranial-syndesmosis.glb",
+    "system": "skeletal"
+  },
+  "cranium": {
+    "available": true,
+    "path": "/models/skeletal/cranium.glb",
+    "system": "skeletal"
+  },
+  "crico-arythenoid-joint": {
+    "available": true,
+    "path": "/models/respiratory/crico-arythenoid-joint.glb",
+    "system": "respiratory"
+  },
+  "cricoid-cartilage": {
+    "available": true,
+    "path": "/models/unclassified/cricoid-cartilage.glb",
+    "system": "unclassified"
+  },
+  "cross-section-planes": {
+    "available": true,
+    "path": "/models/unclassified/cross-section-planes.glb",
+    "system": "unclassified"
+  },
+  "cubital-region": {
+    "available": true,
+    "path": "/models/unclassified/cubital-region.glb",
+    "system": "unclassified"
+  },
+  "cuboid-bone": {
+    "available": true,
+    "path": "/models/skeletal/cuboid-bone.glb",
+    "system": "skeletal"
+  },
+  "cuboidonavicular-joint": {
+    "available": true,
+    "path": "/models/skeletal/cuboidonavicular-joint.glb",
+    "system": "skeletal"
+  },
+  "cuneocuboid-joint": {
+    "available": true,
+    "path": "/models/skeletal/cuneocuboid-joint.glb",
+    "system": "skeletal"
+  },
+  "cuneonavicular-joint": {
+    "available": true,
+    "path": "/models/skeletal/cuneonavicular-joint.glb",
+    "system": "skeletal"
+  },
+  "deep-fibular-nerve": {
+    "available": true,
+    "path": "/models/skeletal/deep-fibular-nerve.glb",
+    "system": "skeletal"
+  },
+  "deep-gluteal-muscles": {
+    "available": true,
+    "path": "/models/muscular/deep-gluteal-muscles.glb",
+    "system": "muscular"
+  },
+  "deltoid-muscle": {
+    "available": true,
+    "path": "/models/muscular/deltoid-muscle.glb",
+    "system": "muscular"
+  },
+  "diencephalon": {
+    "available": true,
+    "path": "/models/nervous/diencephalon.glb",
+    "system": "nervous"
+  },
+  "digestive-canal": {
+    "available": true,
+    "path": "/models/unclassified/digestive-canal.glb",
+    "system": "unclassified"
+  },
+  "digestive-system": {
+    "available": true,
+    "path": "/models/unclassified/digestive-system.glb",
+    "system": "unclassified"
+  },
+  "distal-radio-ulnar-joint": {
+    "available": true,
+    "path": "/models/skeletal/distal-radio-ulnar-joint.glb",
+    "system": "skeletal"
+  },
+  "dorsal-intercarpal-ligaments": {
+    "available": true,
+    "path": "/models/skeletal/dorsal-intercarpal-ligaments.glb",
+    "system": "skeletal"
+  },
+  "dorsal-scapular-nerve": {
+    "available": true,
+    "path": "/models/skeletal/dorsal-scapular-nerve.glb",
+    "system": "skeletal"
+  },
+  "dorsal-striatum": {
+    "available": true,
+    "path": "/models/nervous/dorsal-striatum.glb",
+    "system": "nervous"
+  },
+  "elbow-joint": {
+    "available": true,
+    "path": "/models/unclassified/elbow-joint.glb",
+    "system": "unclassified"
+  },
+  "endocrine-glands": {
+    "available": true,
+    "path": "/models/unclassified/endocrine-glands.glb",
+    "system": "unclassified"
+  },
+  "epigastric-region": {
+    "available": true,
+    "path": "/models/unclassified/epigastric-region.glb",
+    "system": "unclassified"
+  },
+  "erector-spinae": {
+    "available": true,
+    "path": "/models/muscular/erector-spinae.glb",
+    "system": "muscular"
+  },
+  "external-surface-of-squamous-part-of-frontal-bone": {
+    "available": true,
+    "path": "/models/skeletal/external-surface-of-squamous-part-of-frontal-bone.glb",
+    "system": "skeletal"
+  },
+  "extracranial-bones-of-head": {
+    "available": true,
+    "path": "/models/skeletal/extracranial-bones-of-head.glb",
+    "system": "skeletal"
+  },
+  "eye": {
+    "available": true,
+    "path": "/models/unclassified/eye.glb",
+    "system": "unclassified"
+  },
+  "facial-muscles": {
+    "available": true,
+    "path": "/models/muscular/facial-muscles.glb",
+    "system": "muscular"
+  },
+  "facial-nerve-vii": {
+    "available": true,
+    "path": "/models/nervous/facial-nerve-vii.glb",
+    "system": "nervous"
+  },
+  "false-ribs": {
+    "available": true,
+    "path": "/models/skeletal/false-ribs.glb",
+    "system": "skeletal"
+  },
+  "fascia": {
+    "available": true,
+    "path": "/models/unclassified/fascia.glb",
+    "system": "unclassified"
+  },
+  "fascia-of-upper-limb": {
+    "available": true,
+    "path": "/models/unclassified/fascia-of-upper-limb.glb",
+    "system": "unclassified"
+  },
+  "femoral-nerve": {
+    "available": true,
+    "path": "/models/nervous/femoral-nerve.glb",
+    "system": "nervous"
+  },
+  "femoral-region": {
+    "available": true,
+    "path": "/models/unclassified/femoral-region.glb",
+    "system": "unclassified"
+  },
+  "fibrous-joints": {
+    "available": true,
+    "path": "/models/unclassified/fibrous-joints.glb",
+    "system": "unclassified"
+  },
+  "fibrous-joints-of-free-lower-limb": {
+    "available": true,
+    "path": "/models/unclassified/fibrous-joints-of-free-lower-limb.glb",
+    "system": "unclassified"
+  },
+  "fibrous-joints-of-larynx": {
+    "available": true,
+    "path": "/models/respiratory/fibrous-joints-of-larynx.glb",
+    "system": "respiratory"
+  },
+  "fibrous-joints-of-pectoral-girdle": {
+    "available": true,
+    "path": "/models/muscular/fibrous-joints-of-pectoral-girdle.glb",
+    "system": "muscular"
+  },
+  "fibrous-joints-of-pelvic-girdle": {
+    "available": true,
+    "path": "/models/unclassified/fibrous-joints-of-pelvic-girdle.glb",
+    "system": "unclassified"
+  },
+  "fibrous-joints-of-thorax": {
+    "available": true,
+    "path": "/models/unclassified/fibrous-joints-of-thorax.glb",
+    "system": "unclassified"
+  },
+  "fibrous-joints-of-vertebral-column": {
+    "available": true,
+    "path": "/models/skeletal/fibrous-joints-of-vertebral-column.glb",
+    "system": "skeletal"
+  },
+  "fifth-metatarsal-bone": {
+    "available": true,
+    "path": "/models/skeletal/fifth-metatarsal-bone.glb",
+    "system": "skeletal"
+  },
+  "first-metatarsal-bone": {
+    "available": true,
+    "path": "/models/skeletal/first-metatarsal-bone.glb",
+    "system": "skeletal"
+  },
+  "floating-ribs": {
+    "available": true,
+    "path": "/models/skeletal/floating-ribs.glb",
+    "system": "skeletal"
+  },
+  "fornicate-gyrus": {
+    "available": true,
+    "path": "/models/nervous/fornicate-gyrus.glb",
+    "system": "nervous"
+  },
+  "fornix": {
+    "available": true,
+    "path": "/models/nervous/fornix.glb",
+    "system": "nervous"
+  },
+  "fourth-ventricle": {
+    "available": true,
+    "path": "/models/nervous/fourth-ventricle.glb",
+    "system": "nervous"
+  },
+  "frontal-bone": {
+    "available": true,
+    "path": "/models/skeletal/frontal-bone.glb",
+    "system": "skeletal"
+  },
+  "frontal-lobe": {
+    "available": true,
+    "path": "/models/nervous/frontal-lobe.glb",
+    "system": "nervous"
+  },
+  "frontal-region": {
+    "available": true,
+    "path": "/models/skeletal/frontal-region.glb",
+    "system": "skeletal"
+  },
+  "general-terms": {
+    "available": true,
+    "path": "/models/unclassified/general-terms.glb",
+    "system": "unclassified"
+  },
+  "genital-systems": {
+    "available": true,
+    "path": "/models/unclassified/genital-systems.glb",
+    "system": "unclassified"
+  },
+  "glenohumeral-joint": {
+    "available": true,
+    "path": "/models/unclassified/glenohumeral-joint.glb",
+    "system": "unclassified"
+  },
+  "glenohumeral-ligaments": {
+    "available": true,
+    "path": "/models/unclassified/glenohumeral-ligaments.glb",
+    "system": "unclassified"
+  },
+  "globus-pallidus": {
+    "available": true,
+    "path": "/models/nervous/globus-pallidus.glb",
+    "system": "nervous"
+  },
+  "gluteal-region": {
+    "available": true,
+    "path": "/models/unclassified/gluteal-region.glb",
+    "system": "unclassified"
+  },
+  "greater-wing": {
+    "available": true,
+    "path": "/models/skeletal/greater-wing.glb",
+    "system": "skeletal"
+  },
+  "grey-matter-of-medulla-oblongata": {
+    "available": true,
+    "path": "/models/nervous/grey-matter-of-medulla-oblongata.glb",
+    "system": "nervous"
+  },
+  "grey-matter-of-pontine-tegmentum": {
+    "available": true,
+    "path": "/models/nervous/grey-matter-of-pontine-tegmentum.glb",
+    "system": "nervous"
+  },
+  "grey-matter-of-tegmentum-of-midbrain": {
+    "available": true,
+    "path": "/models/nervous/grey-matter-of-tegmentum-of-midbrain.glb",
+    "system": "nervous"
+  },
+  "habenula": {
+    "available": true,
+    "path": "/models/nervous/habenula.glb",
+    "system": "nervous"
+  },
+  "hairs": {
+    "available": true,
+    "path": "/models/unclassified/hairs.glb",
+    "system": "unclassified"
+  },
+  "head": {
+    "available": true,
+    "path": "/models/unclassified/head.glb",
+    "system": "unclassified"
+  },
+  "head-of-phalanx-of-foot": {
+    "available": true,
+    "path": "/models/skeletal/head-of-phalanx-of-foot.glb",
+    "system": "skeletal"
+  },
+  "head-of-rib": {
+    "available": true,
+    "path": "/models/skeletal/head-of-rib.glb",
+    "system": "skeletal"
+  },
+  "head-of-talus": {
+    "available": true,
+    "path": "/models/skeletal/head-of-talus.glb",
+    "system": "skeletal"
+  },
+  "heart": {
+    "available": true,
+    "path": "/models/cardiovascular/heart.glb",
+    "system": "cardiovascular"
+  },
+  "hip-joint": {
+    "available": true,
+    "path": "/models/unclassified/hip-joint.glb",
+    "system": "unclassified"
+  },
+  "hippocampus": {
+    "available": true,
+    "path": "/models/nervous/hippocampus.glb",
+    "system": "nervous"
+  },
+  "hyoid-bone": {
+    "available": true,
+    "path": "/models/skeletal/hyoid-bone.glb",
+    "system": "skeletal"
+  },
+  "hypaxial-muscles-of-back": {
+    "available": true,
+    "path": "/models/muscular/hypaxial-muscles-of-back.glb",
+    "system": "muscular"
+  },
+  "hypoglossal-nerve-xii": {
+    "available": true,
+    "path": "/models/nervous/hypoglossal-nerve-xii.glb",
+    "system": "nervous"
+  },
+  "hypothalamus": {
+    "available": true,
+    "path": "/models/nervous/hypothalamus.glb",
+    "system": "nervous"
+  },
+  "iliofemoral-ligament": {
+    "available": true,
+    "path": "/models/unclassified/iliofemoral-ligament.glb",
+    "system": "unclassified"
+  },
+  "incus": {
+    "available": true,
+    "path": "/models/unclassified/incus.glb",
+    "system": "unclassified"
+  },
+  "inferior-articular-process-of-vertebra": {
+    "available": true,
+    "path": "/models/skeletal/inferior-articular-process-of-vertebra.glb",
+    "system": "skeletal"
+  },
+  "inferior-colliculus": {
+    "available": true,
+    "path": "/models/nervous/inferior-colliculus.glb",
+    "system": "nervous"
+  },
+  "inferior-frontal-gyrus": {
+    "available": true,
+    "path": "/models/nervous/inferior-frontal-gyrus.glb",
+    "system": "nervous"
+  },
+  "inferior-parietal-lobe": {
+    "available": true,
+    "path": "/models/nervous/inferior-parietal-lobe.glb",
+    "system": "nervous"
+  },
+  "inferior-teeth": {
+    "available": true,
+    "path": "/models/unclassified/inferior-teeth.glb",
+    "system": "unclassified"
+  },
+  "infraclavicular-part-of-brachial-plexus": {
+    "available": true,
+    "path": "/models/nervous/infraclavicular-part-of-brachial-plexus.glb",
+    "system": "nervous"
+  },
+  "infrahyoid-region": {
+    "available": true,
+    "path": "/models/unclassified/infrahyoid-region.glb",
+    "system": "unclassified"
+  },
+  "insula": {
+    "available": true,
+    "path": "/models/nervous/insula.glb",
+    "system": "nervous"
+  },
+  "intercarpal-joints": {
+    "available": true,
+    "path": "/models/skeletal/intercarpal-joints.glb",
+    "system": "skeletal"
+  },
+  "intercuneiform-joints": {
+    "available": true,
+    "path": "/models/skeletal/intercuneiform-joints.glb",
+    "system": "skeletal"
+  },
+  "interlobular-sulci": {
+    "available": true,
+    "path": "/models/nervous/interlobular-sulci.glb",
+    "system": "nervous"
+  },
+  "intermetacarpal-joints": {
+    "available": true,
+    "path": "/models/skeletal/intermetacarpal-joints.glb",
+    "system": "skeletal"
+  },
+  "intermetatarsal-joints": {
+    "available": true,
+    "path": "/models/skeletal/intermetatarsal-joints.glb",
+    "system": "skeletal"
+  },
+  "internal-capsule": {
+    "available": true,
+    "path": "/models/nervous/internal-capsule.glb",
+    "system": "nervous"
+  },
+  "internal-surface-of-frontal-bone": {
+    "available": true,
+    "path": "/models/skeletal/internal-surface-of-frontal-bone.glb",
+    "system": "skeletal"
+  },
+  "interosseus-intercarpal-ligaments": {
+    "available": true,
+    "path": "/models/skeletal/interosseus-intercarpal-ligaments.glb",
+    "system": "skeletal"
+  },
+  "interphalangeal-joints-of-foot": {
+    "available": true,
+    "path": "/models/skeletal/interphalangeal-joints-of-foot.glb",
+    "system": "skeletal"
+  },
+  "interphalangeal-joints-of-hand": {
+    "available": true,
+    "path": "/models/skeletal/interphalangeal-joints-of-hand.glb",
+    "system": "skeletal"
+  },
+  "intervertebral-disc": {
+    "available": true,
+    "path": "/models/skeletal/intervertebral-disc.glb",
+    "system": "skeletal"
+  },
+  "joint-of-head-of-rib": {
+    "available": true,
+    "path": "/models/skeletal/joint-of-head-of-rib.glb",
+    "system": "skeletal"
+  },
+  "joints-of-hand": {
+    "available": true,
+    "path": "/models/unclassified/joints-of-hand.glb",
+    "system": "unclassified"
+  },
+  "knee-joint": {
+    "available": true,
+    "path": "/models/unclassified/knee-joint.glb",
+    "system": "unclassified"
+  },
+  "knee-region": {
+    "available": true,
+    "path": "/models/unclassified/knee-region.glb",
+    "system": "unclassified"
+  },
+  "lacrimal-apparatus": {
+    "available": true,
+    "path": "/models/unclassified/lacrimal-apparatus.glb",
+    "system": "unclassified"
+  },
+  "lacrimal-canliculus": {
+    "available": true,
+    "path": "/models/unclassified/lacrimal-canliculus.glb",
+    "system": "unclassified"
+  },
+  "lacrimal-gland": {
+    "available": true,
+    "path": "/models/unclassified/lacrimal-gland.glb",
+    "system": "unclassified"
+  },
+  "lacrimal-sac": {
+    "available": true,
+    "path": "/models/unclassified/lacrimal-sac.glb",
+    "system": "unclassified"
+  },
+  "lamina-of-cricoid-cartilage": {
+    "available": true,
+    "path": "/models/unclassified/lamina-of-cricoid-cartilage.glb",
+    "system": "unclassified"
+  },
+  "lamina-of-thyroid-cartilage": {
+    "available": true,
+    "path": "/models/unclassified/lamina-of-thyroid-cartilage.glb",
+    "system": "unclassified"
+  },
+  "lamina-of-vertebral-arch": {
+    "available": true,
+    "path": "/models/skeletal/lamina-of-vertebral-arch.glb",
+    "system": "skeletal"
+  },
+  "laryngeal-muscles": {
+    "available": true,
+    "path": "/models/muscular/laryngeal-muscles.glb",
+    "system": "muscular"
+  },
+  "lateral-collateral-ligament": {
+    "available": true,
+    "path": "/models/unclassified/lateral-collateral-ligament.glb",
+    "system": "unclassified"
+  },
+  "lateral-compartment-of-leg": {
+    "available": true,
+    "path": "/models/muscular/lateral-compartment-of-leg.glb",
+    "system": "muscular"
+  },
+  "lateral-malleolar-facet": {
+    "available": true,
+    "path": "/models/skeletal/lateral-malleolar-facet.glb",
+    "system": "skeletal"
+  },
+  "lateral-mass": {
+    "available": true,
+    "path": "/models/skeletal/lateral-mass.glb",
+    "system": "skeletal"
+  },
+  "lateral-meniscus": {
+    "available": true,
+    "path": "/models/unclassified/lateral-meniscus.glb",
+    "system": "unclassified"
+  },
+  "lateral-part-of-occipital-bone": {
+    "available": true,
+    "path": "/models/skeletal/lateral-part-of-occipital-bone.glb",
+    "system": "skeletal"
+  },
+  "lateral-pectoral-nerve": {
+    "available": true,
+    "path": "/models/muscular/lateral-pectoral-nerve.glb",
+    "system": "muscular"
+  },
+  "lateral-plantar-nerve": {
+    "available": true,
+    "path": "/models/skeletal/lateral-plantar-nerve.glb",
+    "system": "skeletal"
+  },
+  "lateral-region-of-neck": {
+    "available": true,
+    "path": "/models/unclassified/lateral-region-of-neck.glb",
+    "system": "unclassified"
+  },
+  "lateral-ventricle": {
+    "available": true,
+    "path": "/models/cardiovascular/lateral-ventricle.glb",
+    "system": "cardiovascular"
+  },
+  "left-cerebral-hemisphere": {
+    "available": true,
+    "path": "/models/nervous/left-cerebral-hemisphere.glb",
+    "system": "nervous"
+  },
+  "left-foot": {
+    "available": true,
+    "path": "/models/unclassified/left-foot.glb",
+    "system": "unclassified"
+  },
+  "left-hand": {
+    "available": true,
+    "path": "/models/unclassified/left-hand.glb",
+    "system": "unclassified"
+  },
+  "left-lower-limb": {
+    "available": true,
+    "path": "/models/unclassified/left-lower-limb.glb",
+    "system": "unclassified"
+  },
+  "left-upper-limb": {
+    "available": true,
+    "path": "/models/unclassified/left-upper-limb.glb",
+    "system": "unclassified"
+  },
+  "leg-region": {
+    "available": true,
+    "path": "/models/unclassified/leg-region.glb",
+    "system": "unclassified"
+  },
+  "lesser-wing": {
+    "available": true,
+    "path": "/models/skeletal/lesser-wing.glb",
+    "system": "skeletal"
+  },
+  "limbic-lobe": {
+    "available": true,
+    "path": "/models/nervous/limbic-lobe.glb",
+    "system": "nervous"
+  },
+  "liver": {
+    "available": true,
+    "path": "/models/digestive/liver.glb",
+    "system": "digestive"
+  },
+  "long-thoracic-nerve": {
+    "available": true,
+    "path": "/models/nervous/long-thoracic-nerve.glb",
+    "system": "nervous"
+  },
+  "longitudinal-arch-of-foot": {
+    "available": true,
+    "path": "/models/unclassified/longitudinal-arch-of-foot.glb",
+    "system": "unclassified"
+  },
+  "lumbar-nerves": {
+    "available": true,
+    "path": "/models/nervous/lumbar-nerves.glb",
+    "system": "nervous"
+  },
+  "lumbar-plexus": {
+    "available": true,
+    "path": "/models/nervous/lumbar-plexus.glb",
+    "system": "nervous"
+  },
+  "lumbar-vertebrae": {
+    "available": true,
+    "path": "/models/skeletal/lumbar-vertebrae.glb",
+    "system": "skeletal"
+  },
+  "lumbosacral-plexus": {
+    "available": true,
+    "path": "/models/nervous/lumbosacral-plexus.glb",
+    "system": "nervous"
+  },
+  "lungs": {
+    "available": true,
+    "path": "/models/respiratory/lungs.glb",
+    "system": "respiratory"
+  },
+  "lymphoid-system": {
+    "available": true,
+    "path": "/models/unclassified/lymphoid-system.glb",
+    "system": "unclassified"
+  },
+  "malleus": {
+    "available": true,
+    "path": "/models/unclassified/malleus.glb",
+    "system": "unclassified"
+  },
+  "mandible": {
+    "available": true,
+    "path": "/models/skeletal/mandible.glb",
+    "system": "skeletal"
+  },
+  "manubrium-of-sternum": {
+    "available": true,
+    "path": "/models/skeletal/manubrium-of-sternum.glb",
+    "system": "skeletal"
+  },
+  "maxilla": {
+    "available": true,
+    "path": "/models/skeletal/maxilla.glb",
+    "system": "skeletal"
+  },
+  "medial-collateral-ligament": {
+    "available": true,
+    "path": "/models/unclassified/medial-collateral-ligament.glb",
+    "system": "unclassified"
+  },
+  "medial-compartment-of-thigh": {
+    "available": true,
+    "path": "/models/muscular/medial-compartment-of-thigh.glb",
+    "system": "muscular"
+  },
+  "medial-meniscus": {
+    "available": true,
+    "path": "/models/unclassified/medial-meniscus.glb",
+    "system": "unclassified"
+  },
+  "medial-plantar-nerve": {
+    "available": true,
+    "path": "/models/skeletal/medial-plantar-nerve.glb",
+    "system": "skeletal"
+  },
+  "median-nerve": {
+    "available": true,
+    "path": "/models/nervous/median-nerve.glb",
+    "system": "nervous"
+  },
+  "medulla-oblongata": {
+    "available": true,
+    "path": "/models/nervous/medulla-oblongata.glb",
+    "system": "nervous"
+  },
+  "meninges": {
+    "available": true,
+    "path": "/models/unclassified/meninges.glb",
+    "system": "unclassified"
+  },
+  "metacarpophalangeal-joints": {
+    "available": true,
+    "path": "/models/skeletal/metacarpophalangeal-joints.glb",
+    "system": "skeletal"
+  },
+  "metatarsal-bone": {
+    "available": true,
+    "path": "/models/skeletal/metatarsal-bone.glb",
+    "system": "skeletal"
+  },
+  "metatarsal-region": {
+    "available": true,
+    "path": "/models/skeletal/metatarsal-region.glb",
+    "system": "skeletal"
+  },
+  "metatarsophalangeal-joints": {
+    "available": true,
+    "path": "/models/skeletal/metatarsophalangeal-joints.glb",
+    "system": "skeletal"
+  },
+  "midbrain": {
+    "available": true,
+    "path": "/models/nervous/midbrain.glb",
+    "system": "nervous"
+  },
+  "mouth": {
+    "available": true,
+    "path": "/models/unclassified/mouth.glb",
+    "system": "unclassified"
+  },
+  "movements": {
+    "available": true,
+    "path": "/models/unclassified/movements.glb",
+    "system": "unclassified"
+  },
+  "muscles": {
+    "available": true,
+    "path": "/models/muscular/muscles.glb",
+    "system": "muscular"
+  },
+  "muscles-of-abdomen": {
+    "available": true,
+    "path": "/models/muscular/muscles-of-abdomen.glb",
+    "system": "muscular"
+  },
+  "muscles-of-foot": {
+    "available": true,
+    "path": "/models/muscular/muscles-of-foot.glb",
+    "system": "muscular"
+  },
+  "muscles-of-hand": {
+    "available": true,
+    "path": "/models/muscular/muscles-of-hand.glb",
+    "system": "muscular"
+  },
+  "muscles-of-head": {
+    "available": true,
+    "path": "/models/muscular/muscles-of-head.glb",
+    "system": "muscular"
+  },
+  "muscles-of-lower-limb": {
+    "available": true,
+    "path": "/models/muscular/muscles-of-lower-limb.glb",
+    "system": "muscular"
+  },
+  "muscles-of-neck": {
+    "available": true,
+    "path": "/models/muscular/muscles-of-neck.glb",
+    "system": "muscular"
+  },
+  "muscles-of-upper-limb": {
+    "available": true,
+    "path": "/models/muscular/muscles-of-upper-limb.glb",
+    "system": "muscular"
+  },
+  "musculocutaneous-nerve": {
+    "available": true,
+    "path": "/models/nervous/musculocutaneous-nerve.glb",
+    "system": "nervous"
+  },
+  "nail": {
+    "available": true,
+    "path": "/models/unclassified/nail.glb",
+    "system": "unclassified"
+  },
+  "nail-plate": {
+    "available": true,
+    "path": "/models/unclassified/nail-plate.glb",
+    "system": "unclassified"
+  },
+  "nasal-part-of-frontal-bone": {
+    "available": true,
+    "path": "/models/skeletal/nasal-part-of-frontal-bone.glb",
+    "system": "skeletal"
+  },
+  "nasal-region": {
+    "available": true,
+    "path": "/models/unclassified/nasal-region.glb",
+    "system": "unclassified"
+  },
+  "nasolacrimal-duct": {
+    "available": true,
+    "path": "/models/unclassified/nasolacrimal-duct.glb",
+    "system": "unclassified"
+  },
+  "navicular-bone": {
+    "available": true,
+    "path": "/models/skeletal/navicular-bone.glb",
+    "system": "skeletal"
+  },
+  "neck": {
+    "available": true,
+    "path": "/models/unclassified/neck.glb",
+    "system": "unclassified"
+  },
+  "neck-of-rib": {
+    "available": true,
+    "path": "/models/skeletal/neck-of-rib.glb",
+    "system": "skeletal"
+  },
+  "neck-of-talus": {
+    "available": true,
+    "path": "/models/skeletal/neck-of-talus.glb",
+    "system": "skeletal"
+  },
+  "neo-cortex": {
+    "available": true,
+    "path": "/models/unclassified/neo-cortex.glb",
+    "system": "unclassified"
+  },
+  "nerves": {
+    "available": true,
+    "path": "/models/nervous/nerves.glb",
+    "system": "nervous"
+  },
+  "obturator-membrane": {
+    "available": true,
+    "path": "/models/unclassified/obturator-membrane.glb",
+    "system": "unclassified"
+  },
+  "obturator-nerve": {
+    "available": true,
+    "path": "/models/nervous/obturator-nerve.glb",
+    "system": "nervous"
+  },
+  "occipital-lobe": {
+    "available": true,
+    "path": "/models/nervous/occipital-lobe.glb",
+    "system": "nervous"
+  },
+  "occipitotemporal-gyri": {
+    "available": true,
+    "path": "/models/nervous/occipitotemporal-gyri.glb",
+    "system": "nervous"
+  },
+  "oculomotor-complex": {
+    "available": true,
+    "path": "/models/nervous/oculomotor-complex.glb",
+    "system": "nervous"
+  },
+  "oculomotor-nerve-iii": {
+    "available": true,
+    "path": "/models/nervous/oculomotor-nerve-iii.glb",
+    "system": "nervous"
+  },
+  "optic-tract": {
+    "available": true,
+    "path": "/models/nervous/optic-tract.glb",
+    "system": "nervous"
+  },
+  "oral-region": {
+    "available": true,
+    "path": "/models/unclassified/oral-region.glb",
+    "system": "unclassified"
+  },
+  "orbital-part-of-frontal-bone": {
+    "available": true,
+    "path": "/models/skeletal/orbital-part-of-frontal-bone.glb",
+    "system": "skeletal"
+  },
+  "orbital-region": {
+    "available": true,
+    "path": "/models/unclassified/orbital-region.glb",
+    "system": "unclassified"
+  },
+  "orbital-surface-of-frontal-bone": {
+    "available": true,
+    "path": "/models/skeletal/orbital-surface-of-frontal-bone.glb",
+    "system": "skeletal"
+  },
+  "orientations": {
+    "available": true,
+    "path": "/models/unclassified/orientations.glb",
+    "system": "unclassified"
+  },
+  "palm": {
+    "available": true,
+    "path": "/models/unclassified/palm.glb",
+    "system": "unclassified"
+  },
+  "palmar-intercarpal-ligaments": {
+    "available": true,
+    "path": "/models/skeletal/palmar-intercarpal-ligaments.glb",
+    "system": "skeletal"
+  },
+  "palmar-radiocarpal-ligament": {
+    "available": true,
+    "path": "/models/skeletal/palmar-radiocarpal-ligament.glb",
+    "system": "skeletal"
+  },
+  "palmar-ulnocarpal-ligament": {
+    "available": true,
+    "path": "/models/skeletal/palmar-ulnocarpal-ligament.glb",
+    "system": "skeletal"
+  },
+  "parietal-lobe": {
+    "available": true,
+    "path": "/models/nervous/parietal-lobe.glb",
+    "system": "nervous"
+  },
+  "pectoral-region": {
+    "available": true,
+    "path": "/models/muscular/pectoral-region.glb",
+    "system": "muscular"
+  },
+  "pectoralis-major-muscle": {
+    "available": true,
+    "path": "/models/muscular/pectoralis-major-muscle.glb",
+    "system": "muscular"
+  },
+  "pelvis": {
+    "available": true,
+    "path": "/models/skeletal/pelvis.glb",
+    "system": "skeletal"
+  },
+  "peripheral-nervous-system": {
+    "available": true,
+    "path": "/models/unclassified/peripheral-nervous-system.glb",
+    "system": "unclassified"
+  },
+  "peritoneal-structures": {
+    "available": true,
+    "path": "/models/unclassified/peritoneal-structures.glb",
+    "system": "unclassified"
+  },
+  "petrous-part-of-temporal-bone": {
+    "available": true,
+    "path": "/models/skeletal/petrous-part-of-temporal-bone.glb",
+    "system": "skeletal"
+  },
+  "phalanges-of-foot": {
+    "available": true,
+    "path": "/models/skeletal/phalanges-of-foot.glb",
+    "system": "skeletal"
+  },
+  "phalanx-of-foot": {
+    "available": true,
+    "path": "/models/skeletal/phalanx-of-foot.glb",
+    "system": "skeletal"
+  },
+  "pharyngeal-muscles": {
+    "available": true,
+    "path": "/models/muscular/pharyngeal-muscles.glb",
+    "system": "muscular"
+  },
+  "pisiform-joint": {
+    "available": true,
+    "path": "/models/skeletal/pisiform-joint.glb",
+    "system": "skeletal"
+  },
+  "pons": {
+    "available": true,
+    "path": "/models/nervous/pons.glb",
+    "system": "nervous"
+  },
+  "posterior-compartment-of-arm": {
+    "available": true,
+    "path": "/models/muscular/posterior-compartment-of-arm.glb",
+    "system": "muscular"
+  },
+  "posterior-compartment-of-forearm": {
+    "available": true,
+    "path": "/models/muscular/posterior-compartment-of-forearm.glb",
+    "system": "muscular"
+  },
+  "posterior-compartment-of-leg": {
+    "available": true,
+    "path": "/models/muscular/posterior-compartment-of-leg.glb",
+    "system": "muscular"
+  },
+  "posterior-compartment-of-thigh": {
+    "available": true,
+    "path": "/models/muscular/posterior-compartment-of-thigh.glb",
+    "system": "muscular"
+  },
+  "posterior-process-of-talus": {
+    "available": true,
+    "path": "/models/skeletal/posterior-process-of-talus.glb",
+    "system": "skeletal"
+  },
+  "posterior-rami-of-lumbar-nerves": {
+    "available": true,
+    "path": "/models/nervous/posterior-rami-of-lumbar-nerves.glb",
+    "system": "nervous"
+  },
+  "posterior-region-of-ankle": {
+    "available": true,
+    "path": "/models/unclassified/posterior-region-of-ankle.glb",
+    "system": "unclassified"
+  },
+  "posterior-region-of-knee": {
+    "available": true,
+    "path": "/models/unclassified/posterior-region-of-knee.glb",
+    "system": "unclassified"
+  },
+  "posterior-region-of-leg": {
+    "available": true,
+    "path": "/models/unclassified/posterior-region-of-leg.glb",
+    "system": "unclassified"
+  },
+  "posterior-teeth": {
+    "available": true,
+    "path": "/models/unclassified/posterior-teeth.glb",
+    "system": "unclassified"
+  },
+  "pterygoid-hamulus": {
+    "available": true,
+    "path": "/models/skeletal/pterygoid-hamulus.glb",
+    "system": "skeletal"
+  },
+  "pterygoid-process": {
+    "available": true,
+    "path": "/models/skeletal/pterygoid-process.glb",
+    "system": "skeletal"
+  },
+  "pubic-symphysis": {
+    "available": true,
+    "path": "/models/unclassified/pubic-symphysis.glb",
+    "system": "unclassified"
+  },
+  "pulmonary-arteries": {
+    "available": true,
+    "path": "/models/cardiovascular/pulmonary-arteries.glb",
+    "system": "cardiovascular"
+  },
+  "quadrangular-membrane": {
+    "available": true,
+    "path": "/models/respiratory/quadrangular-membrane.glb",
+    "system": "respiratory"
+  },
+  "radial-nerve": {
+    "available": true,
+    "path": "/models/nervous/radial-nerve.glb",
+    "system": "nervous"
+  },
+  "radio-ulnar-syndesmoses": {
+    "available": true,
+    "path": "/models/skeletal/radio-ulnar-syndesmoses.glb",
+    "system": "skeletal"
+  },
+  "radiocarpal-joint": {
+    "available": true,
+    "path": "/models/skeletal/radiocarpal-joint.glb",
+    "system": "skeletal"
+  },
+  "reference-lines": {
+    "available": true,
+    "path": "/models/unclassified/reference-lines.glb",
+    "system": "unclassified"
+  },
+  "reference-lines-reference-planes-movements": {
+    "available": true,
+    "path": "/models/unclassified/reference-lines-reference-planes-movements.glb",
+    "system": "unclassified"
+  },
+  "region-of-digits-of-foot": {
+    "available": true,
+    "path": "/models/unclassified/region-of-digits-of-foot.glb",
+    "system": "unclassified"
+  },
+  "region-of-digits-of-hand": {
+    "available": true,
+    "path": "/models/unclassified/region-of-digits-of-hand.glb",
+    "system": "unclassified"
+  },
+  "region-of-hand": {
+    "available": true,
+    "path": "/models/unclassified/region-of-hand.glb",
+    "system": "unclassified"
+  },
+  "regions-of-abdomen": {
+    "available": true,
+    "path": "/models/unclassified/regions-of-abdomen.glb",
+    "system": "unclassified"
+  },
+  "regions-of-epicranium": {
+    "available": true,
+    "path": "/models/skeletal/regions-of-epicranium.glb",
+    "system": "skeletal"
+  },
+  "regions-of-face": {
+    "available": true,
+    "path": "/models/unclassified/regions-of-face.glb",
+    "system": "unclassified"
+  },
+  "regions-of-foot": {
+    "available": true,
+    "path": "/models/unclassified/regions-of-foot.glb",
+    "system": "unclassified"
+  },
+  "regions-of-head": {
+    "available": true,
+    "path": "/models/unclassified/regions-of-head.glb",
+    "system": "unclassified"
+  },
+  "regions-of-lower-limb": {
+    "available": true,
+    "path": "/models/unclassified/regions-of-lower-limb.glb",
+    "system": "unclassified"
+  },
+  "regions-of-neck": {
+    "available": true,
+    "path": "/models/unclassified/regions-of-neck.glb",
+    "system": "unclassified"
+  },
+  "regions-of-perineum": {
+    "available": true,
+    "path": "/models/unclassified/regions-of-perineum.glb",
+    "system": "unclassified"
+  },
+  "regions-of-thorax": {
+    "available": true,
+    "path": "/models/unclassified/regions-of-thorax.glb",
+    "system": "unclassified"
+  },
+  "regions-of-trunk": {
+    "available": true,
+    "path": "/models/unclassified/regions-of-trunk.glb",
+    "system": "unclassified"
+  },
+  "regions-of-upper-limb": {
+    "available": true,
+    "path": "/models/unclassified/regions-of-upper-limb.glb",
+    "system": "unclassified"
+  },
+  "respiratory-system": {
+    "available": true,
+    "path": "/models/unclassified/respiratory-system.glb",
+    "system": "unclassified"
+  },
+  "rib": {
+    "available": true,
+    "path": "/models/skeletal/rib.glb",
+    "system": "skeletal"
+  },
+  "ribs": {
+    "available": true,
+    "path": "/models/skeletal/ribs.glb",
+    "system": "skeletal"
+  },
+  "right-cerebal-hemisphere": {
+    "available": true,
+    "path": "/models/nervous/right-cerebal-hemisphere.glb",
+    "system": "nervous"
+  },
+  "right-foot": {
+    "available": true,
+    "path": "/models/unclassified/right-foot.glb",
+    "system": "unclassified"
+  },
+  "right-hand": {
+    "available": true,
+    "path": "/models/unclassified/right-hand.glb",
+    "system": "unclassified"
+  },
+  "right-lower-limb": {
+    "available": true,
+    "path": "/models/unclassified/right-lower-limb.glb",
+    "system": "unclassified"
+  },
+  "right-maxilla": {
+    "available": true,
+    "path": "/models/skeletal/right-maxilla.glb",
+    "system": "skeletal"
+  },
+  "right-upper-limb": {
+    "available": true,
+    "path": "/models/unclassified/right-upper-limb.glb",
+    "system": "unclassified"
+  },
+  "rotator-cuff-muscles": {
+    "available": true,
+    "path": "/models/muscular/rotator-cuff-muscles.glb",
+    "system": "muscular"
+  },
+  "rotatores": {
+    "available": true,
+    "path": "/models/muscular/rotatores.glb",
+    "system": "muscular"
+  },
+  "sacral-plexus": {
+    "available": true,
+    "path": "/models/nervous/sacral-plexus.glb",
+    "system": "nervous"
+  },
+  "sacro-iliac-joint": {
+    "available": true,
+    "path": "/models/unclassified/sacro-iliac-joint.glb",
+    "system": "unclassified"
+  },
+  "sacrotuberous-ligament": {
+    "available": true,
+    "path": "/models/unclassified/sacrotuberous-ligament.glb",
+    "system": "unclassified"
+  },
+  "sagittal-planes": {
+    "available": true,
+    "path": "/models/unclassified/sagittal-planes.glb",
+    "system": "unclassified"
+  },
+  "sciatic-nerve": {
+    "available": true,
+    "path": "/models/nervous/sciatic-nerve.glb",
+    "system": "nervous"
+  },
+  "sella-turcica": {
+    "available": true,
+    "path": "/models/skeletal/sella-turcica.glb",
+    "system": "skeletal"
+  },
+  "sense-organs": {
+    "available": true,
+    "path": "/models/unclassified/sense-organs.glb",
+    "system": "unclassified"
+  },
+  "sensory-root-of-trigeminal-nerve": {
+    "available": true,
+    "path": "/models/nervous/sensory-root-of-trigeminal-nerve.glb",
+    "system": "nervous"
+  },
+  "septum-pellucidum": {
+    "available": true,
+    "path": "/models/cardiovascular/septum-pellucidum.glb",
+    "system": "cardiovascular"
+  },
+  "sinus-of-frontal-bone": {
+    "available": true,
+    "path": "/models/skeletal/sinus-of-frontal-bone.glb",
+    "system": "skeletal"
+  },
+  "sinus-of-sphenoid-bone": {
+    "available": true,
+    "path": "/models/skeletal/sinus-of-sphenoid-bone.glb",
+    "system": "skeletal"
+  },
+  "sole": {
+    "available": true,
+    "path": "/models/unclassified/sole.glb",
+    "system": "unclassified"
+  },
+  "sphenoid-bone": {
+    "available": true,
+    "path": "/models/skeletal/sphenoid-bone.glb",
+    "system": "skeletal"
+  },
+  "spinal-dura": {
+    "available": true,
+    "path": "/models/unclassified/spinal-dura.glb",
+    "system": "unclassified"
+  },
+  "spinal-nerves": {
+    "available": true,
+    "path": "/models/nervous/spinal-nerves.glb",
+    "system": "nervous"
+  },
+  "squamous-part-of-frontal-bone": {
+    "available": true,
+    "path": "/models/skeletal/squamous-part-of-frontal-bone.glb",
+    "system": "skeletal"
+  },
+  "squamous-part-of-occipital-bone": {
+    "available": true,
+    "path": "/models/skeletal/squamous-part-of-occipital-bone.glb",
+    "system": "skeletal"
+  },
+  "stapes": {
+    "available": true,
+    "path": "/models/unclassified/stapes.glb",
+    "system": "unclassified"
+  },
+  "sternal-end": {
+    "available": true,
+    "path": "/models/skeletal/sternal-end.glb",
+    "system": "skeletal"
+  },
+  "sternoclavicular-joint": {
+    "available": true,
+    "path": "/models/muscular/sternoclavicular-joint.glb",
+    "system": "muscular"
+  },
+  "sternocleidomastoid-region": {
+    "available": true,
+    "path": "/models/unclassified/sternocleidomastoid-region.glb",
+    "system": "unclassified"
+  },
+  "sternum": {
+    "available": true,
+    "path": "/models/skeletal/sternum.glb",
+    "system": "skeletal"
+  },
+  "subclavian-nerve": {
+    "available": true,
+    "path": "/models/nervous/subclavian-nerve.glb",
+    "system": "nervous"
+  },
+  "suboccipital-muscles": {
+    "available": true,
+    "path": "/models/muscular/suboccipital-muscles.glb",
+    "system": "muscular"
+  },
+  "subtalar-joint": {
+    "available": true,
+    "path": "/models/skeletal/subtalar-joint.glb",
+    "system": "skeletal"
+  },
+  "superficial-fibular-nerve": {
+    "available": true,
+    "path": "/models/skeletal/superficial-fibular-nerve.glb",
+    "system": "skeletal"
+  },
+  "superficial-gluteal-muscles": {
+    "available": true,
+    "path": "/models/muscular/superficial-gluteal-muscles.glb",
+    "system": "muscular"
+  },
+  "superficial-muscles": {
+    "available": true,
+    "path": "/models/muscular/superficial-muscles.glb",
+    "system": "muscular"
+  },
+  "superior-articular-process-of-vertebra": {
+    "available": true,
+    "path": "/models/skeletal/superior-articular-process-of-vertebra.glb",
+    "system": "skeletal"
+  },
+  "superior-cerebellar-peduncle": {
+    "available": true,
+    "path": "/models/nervous/superior-cerebellar-peduncle.glb",
+    "system": "nervous"
+  },
+  "superior-colliculus": {
+    "available": true,
+    "path": "/models/nervous/superior-colliculus.glb",
+    "system": "nervous"
+  },
+  "superior-teeth": {
+    "available": true,
+    "path": "/models/unclassified/superior-teeth.glb",
+    "system": "unclassified"
+  },
+  "superior-temporal-gyrus": {
+    "available": true,
+    "path": "/models/nervous/superior-temporal-gyrus.glb",
+    "system": "nervous"
+  },
+  "superior-tibiofibular-joint": {
+    "available": true,
+    "path": "/models/skeletal/superior-tibiofibular-joint.glb",
+    "system": "skeletal"
+  },
+  "supraclavicular-part-of-brachial-plexus": {
+    "available": true,
+    "path": "/models/nervous/supraclavicular-part-of-brachial-plexus.glb",
+    "system": "nervous"
+  },
+  "suprahyoid-region": {
+    "available": true,
+    "path": "/models/unclassified/suprahyoid-region.glb",
+    "system": "unclassified"
+  },
+  "suprascapular-nerve": {
+    "available": true,
+    "path": "/models/skeletal/suprascapular-nerve.glb",
+    "system": "skeletal"
+  },
+  "sustentaculum-tali": {
+    "available": true,
+    "path": "/models/skeletal/sustentaculum-tali.glb",
+    "system": "skeletal"
+  },
+  "sutures": {
+    "available": true,
+    "path": "/models/unclassified/sutures.glb",
+    "system": "unclassified"
+  },
+  "sympathetic-trunk": {
+    "available": true,
+    "path": "/models/unclassified/sympathetic-trunk.glb",
+    "system": "unclassified"
+  },
+  "syndesmoses": {
+    "available": true,
+    "path": "/models/unclassified/syndesmoses.glb",
+    "system": "unclassified"
+  },
+  "systemic-arteries": {
+    "available": true,
+    "path": "/models/cardiovascular/systemic-arteries.glb",
+    "system": "cardiovascular"
+  },
+  "systemic-veins": {
+    "available": true,
+    "path": "/models/cardiovascular/systemic-veins.glb",
+    "system": "cardiovascular"
+  },
+  "talocalcaneonavicular-joint": {
+    "available": true,
+    "path": "/models/skeletal/talocalcaneonavicular-joint.glb",
+    "system": "skeletal"
+  },
+  "talocrural-region": {
+    "available": true,
+    "path": "/models/unclassified/talocrural-region.glb",
+    "system": "unclassified"
+  },
+  "talus": {
+    "available": true,
+    "path": "/models/skeletal/talus.glb",
+    "system": "skeletal"
+  },
+  "tarsometatarsal-joints": {
+    "available": true,
+    "path": "/models/skeletal/tarsometatarsal-joints.glb",
+    "system": "skeletal"
+  },
+  "teeth": {
+    "available": true,
+    "path": "/models/unclassified/teeth.glb",
+    "system": "unclassified"
+  },
+  "telencephalon": {
+    "available": true,
+    "path": "/models/nervous/telencephalon.glb",
+    "system": "nervous"
+  },
+  "temporal-lobe": {
+    "available": true,
+    "path": "/models/nervous/temporal-lobe.glb",
+    "system": "nervous"
+  },
+  "temporal-surface-of-frontal-bone": {
+    "available": true,
+    "path": "/models/skeletal/temporal-surface-of-frontal-bone.glb",
+    "system": "skeletal"
+  },
+  "temporomandibular-joint": {
+    "available": true,
+    "path": "/models/skeletal/temporomandibular-joint.glb",
+    "system": "skeletal"
+  },
+  "tendon-sheaths": {
+    "available": true,
+    "path": "/models/unclassified/tendon-sheaths.glb",
+    "system": "unclassified"
+  },
+  "tentorium-cerebelli": {
+    "available": true,
+    "path": "/models/unclassified/tentorium-cerebelli.glb",
+    "system": "unclassified"
+  },
+  "thalamus": {
+    "available": true,
+    "path": "/models/nervous/thalamus.glb",
+    "system": "nervous"
+  },
+  "third-ventricle": {
+    "available": true,
+    "path": "/models/cardiovascular/third-ventricle.glb",
+    "system": "cardiovascular"
+  },
+  "thoracic-nerves": {
+    "available": true,
+    "path": "/models/nervous/thoracic-nerves.glb",
+    "system": "nervous"
+  },
+  "thoracic-skeleton": {
+    "available": true,
+    "path": "/models/skeletal/thoracic-skeleton.glb",
+    "system": "skeletal"
+  },
+  "thoracic-vertebrae": {
+    "available": true,
+    "path": "/models/skeletal/thoracic-vertebrae.glb",
+    "system": "skeletal"
+  },
+  "thorax": {
+    "available": true,
+    "path": "/models/unclassified/thorax.glb",
+    "system": "unclassified"
+  },
+  "thyrohyoid-membrane": {
+    "available": true,
+    "path": "/models/respiratory/thyrohyoid-membrane.glb",
+    "system": "respiratory"
+  },
+  "thyroid-cartilage": {
+    "available": true,
+    "path": "/models/unclassified/thyroid-cartilage.glb",
+    "system": "unclassified"
+  },
+  "tibial-collateral-ligament": {
+    "available": true,
+    "path": "/models/skeletal/tibial-collateral-ligament.glb",
+    "system": "skeletal"
+  },
+  "tibial-nerve": {
+    "available": true,
+    "path": "/models/skeletal/tibial-nerve.glb",
+    "system": "skeletal"
+  },
+  "tibiofibular-syndesmosis": {
+    "available": true,
+    "path": "/models/skeletal/tibiofibular-syndesmosis.glb",
+    "system": "skeletal"
+  },
+  "transverse-planes": {
+    "available": true,
+    "path": "/models/unclassified/transverse-planes.glb",
+    "system": "unclassified"
+  },
+  "transverse-process": {
+    "available": true,
+    "path": "/models/skeletal/transverse-process.glb",
+    "system": "skeletal"
+  },
+  "transverse-tarsal-joint": {
+    "available": true,
+    "path": "/models/skeletal/transverse-tarsal-joint.glb",
+    "system": "skeletal"
+  },
+  "transversospinal-muscles": {
+    "available": true,
+    "path": "/models/muscular/transversospinal-muscles.glb",
+    "system": "muscular"
+  },
+  "trapezius-muscle": {
+    "available": true,
+    "path": "/models/muscular/trapezius-muscle.glb",
+    "system": "muscular"
+  },
+  "trigeminal-nerve-v": {
+    "available": true,
+    "path": "/models/nervous/trigeminal-nerve-v.glb",
+    "system": "nervous"
+  },
+  "trochlea-of-talus": {
+    "available": true,
+    "path": "/models/skeletal/trochlea-of-talus.glb",
+    "system": "skeletal"
+  },
+  "trunk": {
+    "available": true,
+    "path": "/models/unclassified/trunk.glb",
+    "system": "unclassified"
+  },
+  "tubercle-of-rib": {
+    "available": true,
+    "path": "/models/skeletal/tubercle-of-rib.glb",
+    "system": "skeletal"
+  },
+  "tuberosity-for-coracoclavicular-ligament": {
+    "available": true,
+    "path": "/models/skeletal/tuberosity-for-coracoclavicular-ligament.glb",
+    "system": "skeletal"
+  },
+  "tympanic-membrane": {
+    "available": true,
+    "path": "/models/unclassified/tympanic-membrane.glb",
+    "system": "unclassified"
+  },
+  "ulnar-nerve": {
+    "available": true,
+    "path": "/models/nervous/ulnar-nerve.glb",
+    "system": "nervous"
+  },
+  "umbilical-region": {
+    "available": true,
+    "path": "/models/unclassified/umbilical-region.glb",
+    "system": "unclassified"
+  },
+  "urinary-system": {
+    "available": true,
+    "path": "/models/unclassified/urinary-system.glb",
+    "system": "unclassified"
+  },
+  "vaginal-process-of-sphenoid-bone": {
+    "available": true,
+    "path": "/models/skeletal/vaginal-process-of-sphenoid-bone.glb",
+    "system": "skeletal"
+  },
+  "vertebral-arch": {
+    "available": true,
+    "path": "/models/skeletal/vertebral-arch.glb",
+    "system": "skeletal"
+  },
+  "vertebral-body": {
+    "available": true,
+    "path": "/models/skeletal/vertebral-body.glb",
+    "system": "skeletal"
+  },
+  "vertebral-column": {
+    "available": true,
+    "path": "/models/skeletal/vertebral-column.glb",
+    "system": "skeletal"
+  },
+  "vestibular-nuclei": {
+    "available": true,
+    "path": "/models/nervous/vestibular-nuclei.glb",
+    "system": "nervous"
+  },
+  "vestibule": {
+    "available": true,
+    "path": "/models/unclassified/vestibule.glb",
+    "system": "unclassified"
+  },
+  "walls-of-lateral-ventricle": {
+    "available": true,
+    "path": "/models/cardiovascular/walls-of-lateral-ventricle.glb",
+    "system": "cardiovascular"
+  },
+  "white-matter-of-diencephalon": {
+    "available": true,
+    "path": "/models/nervous/white-matter-of-diencephalon.glb",
+    "system": "nervous"
+  },
+  "white-matter-of-telencephalon": {
+    "available": true,
+    "path": "/models/nervous/white-matter-of-telencephalon.glb",
+    "system": "nervous"
+  }
+}
