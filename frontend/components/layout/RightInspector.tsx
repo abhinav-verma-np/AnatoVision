@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import type { useApiStatus } from "@/hooks/useApiStatus";
-import { getSystemById, type AnatomySystem } from "@/lib/data/anatomy";
+import { useManifest } from "@/hooks/useManifest";
+import { getSystemById, type AnatomySystem, type KeyStructure } from "@/lib/data/anatomy";
+import { getModel } from "@/lib/manifest";
 import { useBookmarks } from "@/lib/bookmarks";
 import { SectionCard } from "@/components/ui/SectionCard";
 import { StatusDot } from "@/components/ui/StatusDot";
@@ -13,7 +15,8 @@ interface RightInspectorProps {
   onClose: () => void;
   apiStatus: ReturnType<typeof useApiStatus>;
   system: AnatomySystem | null;
-  onSelectStructure: (name: string) => void;
+  selectedStructure: KeyStructure | null;
+  onSelectStructure: (structure: KeyStructure) => void;
 }
 
 const STATUS_LABEL: Record<string, string> = {
@@ -23,18 +26,25 @@ const STATUS_LABEL: Record<string, string> = {
 };
 
 /** Right information panel — stacked SectionCards, dynamic per selected
- * body system. System Status reuses the app-wide useApiStatus() poll
- * shared with TopNav's ConnectionBadge rather than running its own. */
+ * body system and structure. System Status reuses the app-wide
+ * useApiStatus() poll shared with TopNav's ConnectionBadge; model
+ * availability is resolved through the shared manifest hook rather than
+ * duplicated here. */
 export function RightInspector({
   open,
   onClose,
   apiStatus,
   system,
+  selectedStructure,
   onSelectStructure,
 }: RightInspectorProps) {
   const { state, lastCheckedAt, refresh } = apiStatus;
   const { isBookmarked, toggleBookmark } = useBookmarks();
+  const { manifest } = useManifest();
   const bookmarked = system ? isBookmarked(system.id) : false;
+
+  const selectedModel =
+    selectedStructure && manifest ? getModel(manifest, selectedStructure.id) : undefined;
 
   return (
     <>
@@ -61,7 +71,9 @@ export function RightInspector({
                   type="button"
                   onClick={() => toggleBookmark(system.id)}
                   aria-pressed={bookmarked}
-                  aria-label={bookmarked ? `Remove ${system.name} bookmark` : `Bookmark ${system.name}`}
+                  aria-label={
+                    bookmarked ? `Remove ${system.name} bookmark` : `Bookmark ${system.name}`
+                  }
                   title={bookmarked ? "Remove bookmark" : "Bookmark this system"}
                   className="rounded-control p-1 text-ink-subtle transition-colors hover:text-accent"
                 >
@@ -76,6 +88,39 @@ export function RightInspector({
               <p>Select a body system from the sidebar to see its overview.</p>
             )}
           </SectionCard>
+
+          {selectedStructure && system && (
+            <SectionCard title="Selected Structure">
+              <dl className="space-y-2 text-xs">
+                <div>
+                  <dt className="text-ink-subtle">Name</dt>
+                  <dd className="mt-0.5 text-ink">{selectedStructure.name}</dd>
+                </div>
+                <div>
+                  <dt className="text-ink-subtle">System</dt>
+                  <dd className="mt-0.5 text-ink-muted">{system.name}</dd>
+                </div>
+                <div>
+                  <dt className="text-ink-subtle">Availability</dt>
+                  <dd className="mt-0.5">
+                    {selectedModel?.available ? (
+                      <span className="text-success">3D model available</span>
+                    ) : (
+                      <span className="text-ink-subtle">Not yet available</span>
+                    )}
+                  </dd>
+                </div>
+                {selectedModel?.available && (
+                  <div>
+                    <dt className="text-ink-subtle">Model path</dt>
+                    <dd className="mt-0.5 truncate font-mono text-[11px] text-ink-subtle">
+                      {selectedModel.path}
+                    </dd>
+                  </div>
+                )}
+              </dl>
+            </SectionCard>
+          )}
 
           <SectionCard title="Quick Facts">
             {system ? (
@@ -95,18 +140,38 @@ export function RightInspector({
           <SectionCard title="Key Structures">
             {system ? (
               <ul className="space-y-1.5">
-                {system.keyStructures.map((structure) => (
-                  <li key={structure.id}>
-                    <button
-                      type="button"
-                      onClick={() => onSelectStructure(structure.name)}
-                      className="w-full rounded-control border border-line px-2.5 py-2 text-left text-xs transition-colors hover:border-line-strong"
-                    >
-                      <span className="block font-medium text-ink">{structure.name}</span>
-                      <span className="mt-0.5 block text-ink-subtle">{structure.description}</span>
-                    </button>
-                  </li>
-                ))}
+                {system.keyStructures.map((structure) => {
+                  const isActive = selectedStructure?.id === structure.id;
+                  const hasModel = manifest ? getModel(manifest, structure.id)?.available : undefined;
+                  return (
+                    <li key={structure.id}>
+                      <button
+                        type="button"
+                        onClick={() => onSelectStructure(structure)}
+                        aria-pressed={isActive}
+                        className={`w-full rounded-control border px-2.5 py-2 text-left text-xs transition-colors ${
+                          isActive
+                            ? "border-accent bg-accent-soft"
+                            : "border-line hover:border-line-strong"
+                        }`}
+                      >
+                        <span className="flex items-center justify-between gap-2">
+                          <span
+                            className={`font-medium ${isActive ? "text-accent" : "text-ink"}`}
+                          >
+                            {structure.name}
+                          </span>
+                          {hasModel && (
+                            <span className="flex-none text-[10px] text-ink-subtle">3D</span>
+                          )}
+                        </span>
+                        <span className="mt-0.5 block text-ink-subtle">
+                          {structure.description}
+                        </span>
+                      </button>
+                    </li>
+                  );
+                })}
               </ul>
             ) : (
               <p>Key structures appear here once a system is selected.</p>

@@ -124,3 +124,23 @@ export function StarIcon({ filled = false, ...props }: IconProps & { filled?: bo
     </svg>
   );
 }
+
+export function AlertTriangleIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 4 3 20h18L12 4Z" />
+      <line x1="12" y1="10.5" x2="12" y2="14.5" />
+      <circle cx="12" cy="17.5" r="0.5" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function CubeIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z" />
+      <path d="M4 7l8 4 8-4" />
+      <line x1="12" y1="11" x2="12" y2="21" />
+    </svg>
+  );
+}

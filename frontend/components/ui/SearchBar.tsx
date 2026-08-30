@@ -46,7 +46,13 @@ export function SearchBar({
   }, []);
 
   function selectResult(result: AnatomySearchResult) {
-    router.push(`/anatomy/${result.systemId}`);
+    // Structure results resolve through the same ?structure= mechanism
+    // AppShell/RightInspector use — one selection path, not a second one.
+    const target =
+      result.type === "structure"
+        ? `/anatomy/${result.systemId}?structure=${result.id}`
+        : `/anatomy/${result.systemId}`;
+    router.push(target);
     setQuery(""); // clearing query also clears the derived `results`
     setIsOpen(false);
   }

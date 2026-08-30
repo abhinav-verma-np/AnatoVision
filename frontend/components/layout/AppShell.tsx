@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
 import { useApiStatus } from "@/hooks/useApiStatus";
-import { getSystemById } from "@/lib/data/anatomy";
+import { getSystemById, type KeyStructure } from "@/lib/data/anatomy";
 import { TopNav } from "@/components/layout/TopNav";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { ViewerWorkspace } from "@/components/layout/ViewerWorkspace";
@@ -15,30 +15,44 @@ import { RightInspector } from "@/components/layout/RightInspector";
  * off-canvas drawers below the lg / xl breakpoints — same structure, no
  * alternate layout, per the UI-lock rules in the project constitution.
  *
- * Selected body system comes from the URL (`/anatomy/[system]`) via
- * useParams, so this same component works for both `/` (no system) and
- * every `/anatomy/*` route without prop drilling from two different
- * page.tsx files. Selected structure is local UI state, cleared whenever
- * the system changes.
+ * Selected body system comes from the URL path (`/anatomy/[system]`) via
+ * useParams; selected structure comes from a `?structure=` query param
+ * rather than local component state. Two reasons: (1) switching systems
+ * via the sidebar naturally drops any lingering structure param — no
+ * manual "reset on change" logic needed — and (2) it gives Search a
+ * single, uniform way to jump straight to a structure (system + structure
+ * in one navigation) without a second selection mechanism.
+ *
+ * One useApiStatus() poll lives here and is shared by the nav's
+ * ConnectionBadge. Manifest loading is NOT lifted here — useManifest()
+ * caches at module scope, so ViewerWorkspace/RightInspector/SearchBar
+ * each calling it independently costs one network request total, not one
+ * per component.
  */
 export function AppShell() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [infoPanelOpen, setInfoPanelOpen] = useState(false);
-  const [selectedStructure, setSelectedStructure] = useState<string | null>(null);
   const apiStatus = useApiStatus();
+  const router = useRouter();
 
   const params = useParams<{ system?: string }>();
+  const searchParams = useSearchParams();
+
   const systemId = typeof params.system === "string" ? params.system : undefined;
   const system = systemId ? (getSystemById(systemId) ?? null) : null;
 
-  // Clear the selected structure whenever the system changes. Adjusted
-  // during render (React's recommended pattern for "reset state when a
-  // prop changes") rather than in an effect, which would call setState
-  // synchronously in the effect body.
-  const [prevSystemId, setPrevSystemId] = useState(systemId);
-  if (systemId !== prevSystemId) {
-    setPrevSystemId(systemId);
-    setSelectedStructure(null);
+  const structureId = searchParams.get("structure");
+  const selectedStructure: KeyStructure | null =
+    (system && structureId && system.keyStructures.find((s) => s.id === structureId)) || null;
+
+  function handleSelectStructure(structure: KeyStructure) {
+    if (!systemId) return;
+    router.push(`/anatomy/${systemId}?structure=${structure.id}`);
+  }
+
+  function handleClearStructure() {
+    if (!systemId) return;
+    router.replace(`/anatomy/${systemId}`);
   }
 
   return (
@@ -53,15 +67,16 @@ export function AppShell() {
         <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
         <ViewerWorkspace
           system={system}
-          structureName={selectedStructure}
-          onClearStructure={() => setSelectedStructure(null)}
+          structure={selectedStructure}
+          onClearStructure={handleClearStructure}
         />
         <RightInspector
           open={infoPanelOpen}
           onClose={() => setInfoPanelOpen(false)}
           apiStatus={apiStatus}
           system={system}
-          onSelectStructure={setSelectedStructure}
+          selectedStructure={selectedStructure}
+          onSelectStructure={handleSelectStructure}
         />
       </div>
     </div>

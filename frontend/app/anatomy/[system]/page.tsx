@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { ANATOMY_SYSTEMS, getSystemById } from "@/lib/data/anatomy";
 import { AppShell } from "@/components/layout/AppShell";
@@ -25,12 +26,18 @@ export async function generateMetadata({
 }
 
 /** Direct loads of /anatomy/skeletal, /anatomy/cardiovascular, etc. all
- * resolve here. AppShell reads the `system` route param itself via
- * useParams(), so no props are threaded through. */
+ * resolve here. AppShell reads the `system` route param and `?structure=`
+ * query param itself, so no props are threaded through. */
 export default async function AnatomySystemPage({ params }: AnatomySystemPageProps) {
   const { system: systemId } = await params;
   const system = getSystemById(systemId);
   if (!system) notFound();
 
-  return <AppShell />;
+  // AppShell's use of useSearchParams() requires a Suspense boundary here
+  // or the route silently opts out of static rendering.
+  return (
+    <Suspense fallback={<div className="h-screen bg-background" />}>
+      <AppShell />
+    </Suspense>
+  );
 }
