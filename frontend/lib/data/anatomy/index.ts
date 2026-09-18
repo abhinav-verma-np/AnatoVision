@@ -7,10 +7,14 @@ import { digestive } from "./digestive";
 import { urinary } from "./urinary";
 import { reproductive } from "./reproductive";
 import type { AnatomySystem } from "./types";
+import {
+  GENERATED_STRUCTURES_BY_SYSTEM,
+  GENERATED_SYSTEMS,
+} from "@/lib/data/generatedCatalog";
 
 export type { AnatomySystem, KeyStructure, ImagingModality } from "./types";
 
-export const ANATOMY_SYSTEMS: AnatomySystem[] = [
+const CURATED_SYSTEMS: AnatomySystem[] = [
   skeletal,
   muscular,
   nervous,
@@ -19,6 +23,28 @@ export const ANATOMY_SYSTEMS: AnatomySystem[] = [
   digestive,
   urinary,
   reproductive,
+];
+
+/**
+ * The full catalog: curated systems (with any auto-generated structures
+ * from unclaimed manifest entries appended — see
+ * scripts/generate-catalog.ts) plus any brand-new systems the manifest's
+ * own "system" values required (e.g. regions, joints, lymphoid, visceral)
+ * that don't have curated content yet.
+ *
+ * Sidebar, SearchBar, RightInspector, and ViewerWorkspace all read from
+ * this single export, so regenerating the catalog (`npm run
+ * generate-catalog`) updates every one of them without touching UI code.
+ */
+export const ANATOMY_SYSTEMS: AnatomySystem[] = [
+  ...CURATED_SYSTEMS.map((system) => ({
+    ...system,
+    keyStructures: [
+      ...system.keyStructures,
+      ...(GENERATED_STRUCTURES_BY_SYSTEM[system.id] ?? []),
+    ],
+  })),
+  ...GENERATED_SYSTEMS,
 ];
 
 const SYSTEM_BY_ID = new Map(ANATOMY_SYSTEMS.map((system) => [system.id, system]));

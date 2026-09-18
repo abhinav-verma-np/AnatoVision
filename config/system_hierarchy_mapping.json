@@ -1,0 +1,14 @@
+{
+  "skeletal": ["skeletal system", "skeletal", "skeleton"],
+  "muscular": ["muscular system", "muscular", "muscles"],
+  "nervous": ["nervous system", "nervous", "nerves"],
+  "cardiovascular": ["cardiovascular system", "cardiovascular", "circulatory system"],
+  "respiratory": ["respiratory system", "respiratory"],
+  "digestive": ["digestive system", "digestive"],
+  "urinary": ["urinary system", "urinary"],
+  "reproductive": ["reproductive system", "reproductive"],
+  "joints": ["joints", "articulations", "articular system"],
+  "lymphoid": ["lymphoid system", "lymphatic system", "lymphoid", "lymphatic"],
+  "visceral": ["viscera", "visceral", "internal organs"],
+  "regions": ["regions", "body regions", "topographical regions", "topographic regions"]
+}

@@ -1,0 +1,74 @@
+name: anatovision
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-anatovision}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-anatovision}
+      POSTGRES_DB: ${POSTGRES_DB:-anatovision}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-anatovision}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-anatovision}:${POSTGRES_PASSWORD:-anatovision}@postgres:5432/${POSTGRES_DB:-anatovision}
+      REDIS_URL: redis://redis:6379/0
+      CORS_ORIGINS: http://localhost:${FRONTEND_PORT:-3000}
+    ports:
+      - "${BACKEND_PORT:-8000}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  frontend:
+    build:
+      context: ./frontend
+      # NEXT_PUBLIC_API_URL is baked into the client bundle at build time,
+      # so it must be passed here (build.args), not under environment:.
+      # This assumes the backend is reachable from the *browser* at this
+      # URL — localhost:8000 works for local `docker compose up`; a real
+      # deployment should point this at the backend's public URL instead.
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:${BACKEND_PORT:-8000}
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-3000}:3000"
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:
+  redis_data:

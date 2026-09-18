@@ -37,6 +37,7 @@ from generate_manifest import generate_manifest, write_manifest
 from pipeline_common import (
     DEFAULT_CHECKPOINT_PATH,
     DEFAULT_COLLECTION_EXPORT_SCRIPT,
+    DEFAULT_HIERARCHY_MAPPING_PATH,
     DEFAULT_LOG_PATH,
     DEFAULT_MANIFEST_PATH,
     DEFAULT_MAPPING_PATH,
@@ -76,6 +77,8 @@ def run_blender_export(
     dry_run: bool,
     only_collection: str,
     timeout: int,
+    hierarchy_mapping_path: Path,
+    generate_previews: bool,
 ) -> tuple[bool, str]:
     """Launch one Blender background subprocess. When only_collection is
     empty, Blender walks and reports on the whole atlas (used for the
@@ -96,6 +99,8 @@ def run_blender_export(
         "1" if force else "0",
         "1" if dry_run else "0",
         only_collection,
+        str(hierarchy_mapping_path),
+        "1" if generate_previews else "0",
     ]
 
     try:
@@ -127,6 +132,8 @@ def print_summary(results: list[CollectionExportResult], total_elapsed: float) -
     processed = [r for r in results if r.status == "processed"]
     skipped = [r for r in results if r.status == "skipped"]
     failed = [r for r in results if r.status == "failed"]
+    with_warnings = [r for r in processed if r.warnings]
+    missing_previews = [r for r in processed if r.preview is None]
 
     print()
     print("=" * 60)
@@ -135,6 +142,7 @@ def print_summary(results: list[CollectionExportResult], total_elapsed: float) -
     print(f"  Processed : {len(processed)}")
     print(f"  Skipped   : {len(skipped)}")
     print(f"  Failed    : {len(failed)}")
+    print(f"  Warnings  : {len(with_warnings)}")
     print(f"  Elapsed   : {format_duration(total_elapsed)}")
 
     if failed:
@@ -142,6 +150,17 @@ def print_summary(results: list[CollectionExportResult], total_elapsed: float) -
         print("  Failed collections:")
         for r in failed:
             print(f"    - {r.collection_path}: {r.reason}")
+
+    if with_warnings:
+        print()
+        print("  Collections with warnings:")
+        for r in with_warnings:
+            for w in r.warnings:
+                print(f"    - {r.collection_path}: {w}")
+
+    if missing_previews:
+        print()
+        print(f"  Missing previews: {len(missing_previews)} (run with --previews to generate)")
 
     print("=" * 60)
 
@@ -160,6 +179,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_MODELS_DIR)
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST_PATH)
     parser.add_argument("--mapping", type=Path, default=DEFAULT_MAPPING_PATH)
+    parser.add_argument("--hierarchy-mapping", type=Path, default=DEFAULT_HIERARCHY_MAPPING_PATH)
     parser.add_argument("--log-file", type=Path, default=DEFAULT_LOG_PATH)
     parser.add_argument("--checkpoint-file", type=Path, default=DEFAULT_CHECKPOINT_PATH)
     parser.add_argument(
@@ -183,6 +203,11 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--dry-run", action="store_true", help="List and classify only — no export or writes"
+    )
+    parser.add_argument(
+        "--previews",
+        action="store_true",
+        help="Also render a .webp preview per exported model via Blender background rendering",
     )
     return parser.parse_args()
 
@@ -251,6 +276,8 @@ def main() -> None:
             dry_run=True,
             only_collection="",
             timeout=LISTING_TIMEOUT_SECONDS,
+            hierarchy_mapping_path=args.hierarchy_mapping,
+            generate_previews=False,  # never during the listing pass
         )
         if not launched:
             logger.error("Failed to list collections: %s", message)
@@ -313,6 +340,8 @@ def main() -> None:
                 dry_run=False,
                 only_collection=path,
                 timeout=args.collection_timeout,
+                hierarchy_mapping_path=args.hierarchy_mapping,
+                generate_previews=args.previews,
             )
 
             if not launched:

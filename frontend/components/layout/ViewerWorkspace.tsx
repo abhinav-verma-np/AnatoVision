@@ -3,7 +3,7 @@
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import type { AnatomySystem, KeyStructure } from "@/lib/data/anatomy";
-import { getModel } from "@/lib/manifest";
+import { resolveModel } from "@/lib/modelResolver";
 import { useManifest } from "@/hooks/useManifest";
 import { WorkspaceHeader } from "@/components/layout/WorkspaceHeader";
 import { StatusBar } from "@/components/layout/StatusBar";
@@ -63,7 +63,7 @@ export function ViewerWorkspace({ system, structure, onClearStructure }: ViewerW
 
   const isThreeDTab = activeTab === "3D Anatomy";
   const resolvedModel =
-    structure && manifest ? getModel(manifest, structure.id) : undefined;
+    structure && manifest ? resolveModel(manifest, structure) : undefined;
   const modelIsAvailable = resolvedModel?.available === true;
 
   return (

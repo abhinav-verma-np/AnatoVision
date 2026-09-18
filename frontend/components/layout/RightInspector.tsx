@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { useApiStatus } from "@/hooks/useApiStatus";
 import { useManifest } from "@/hooks/useManifest";
 import { getSystemById, type AnatomySystem, type KeyStructure } from "@/lib/data/anatomy";
-import { getModel } from "@/lib/manifest";
+import { resolveModel } from "@/lib/modelResolver";
 import { useBookmarks } from "@/lib/bookmarks";
 import { SectionCard } from "@/components/ui/SectionCard";
 import { StatusDot } from "@/components/ui/StatusDot";
@@ -44,7 +44,7 @@ export function RightInspector({
   const bookmarked = system ? isBookmarked(system.id) : false;
 
   const selectedModel =
-    selectedStructure && manifest ? getModel(manifest, selectedStructure.id) : undefined;
+    selectedStructure && manifest ? resolveModel(manifest, selectedStructure) : undefined;
 
   return (
     <>
@@ -142,7 +142,7 @@ export function RightInspector({
               <ul className="space-y-1.5">
                 {system.keyStructures.map((structure) => {
                   const isActive = selectedStructure?.id === structure.id;
-                  const hasModel = manifest ? getModel(manifest, structure.id)?.available : undefined;
+                  const hasModel = manifest ? resolveModel(manifest, structure)?.available : undefined;
                   return (
                     <li key={structure.id}>
                       <button

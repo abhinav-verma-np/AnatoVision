@@ -15,13 +15,15 @@ import platform
 import re
 import shutil
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Literal
 
 # Must match frontend/lib/data/anatomy/*.ts system ids exactly — these are
 # both the frontend/public/models/ subfolder names and the manifest's
-# "system" values.
+# "system" values. Extended with the additional Z-Anatomy top-level
+# groupings (joints, lymphoid, visceral, regions) alongside the original
+# educational-content systems.
 BODY_SYSTEMS: tuple[str, ...] = (
     "skeletal",
     "muscular",
@@ -31,6 +33,10 @@ BODY_SYSTEMS: tuple[str, ...] = (
     "digestive",
     "urinary",
     "reproductive",
+    "joints",
+    "lymphoid",
+    "visceral",
+    "regions",
 )
 
 UNCLASSIFIED = "unclassified"
@@ -47,6 +53,7 @@ DEFAULT_PROCESSED_DIR = REPO_ROOT / "assets" / "processed"
 DEFAULT_MODELS_DIR = REPO_ROOT / "frontend" / "public" / "models"
 DEFAULT_MANIFEST_PATH = DEFAULT_MODELS_DIR / "manifest.json"
 DEFAULT_MAPPING_PATH = REPO_ROOT / "config" / "model_mapping.json"
+DEFAULT_HIERARCHY_MAPPING_PATH = REPO_ROOT / "config" / "system_hierarchy_mapping.json"
 DEFAULT_LOG_PATH = REPO_ROOT / "logs" / "model_processing.log"
 DEFAULT_EXPORT_SCRIPT = Path(__file__).resolve().parent / "export_blender.py"
 
@@ -100,6 +107,13 @@ def classify_model(original_name: str, mapping: dict[str, str]) -> str:
     filename stem (before slugification, so multi-word keywords like
     "spinal cord" still match "Spinal Cord Cervical.obj"). Longer keywords
     are checked first so specific terms win over generic ones.
+
+    This is the FALLBACK tier only (see classify_hierarchical below) —
+    call it with a LEAF structure name, never a full hierarchical path.
+    Matching against a concatenated ancestor path is exactly what caused
+    structures like "Lateral Plantar Nerve" to be misclassified as
+    skeletal (an ancestor collection's name containing a skeletal keyword
+    contaminated an unrelated descendant's classification).
     """
     haystack = original_name.lower()
     for keyword in sorted(mapping, key=len, reverse=True):
@@ -108,6 +122,65 @@ def classify_model(original_name: str, mapping: dict[str, str]) -> str:
             if system in BODY_SYSTEMS:
                 return system
     return UNCLASSIFIED
+
+
+def load_system_hierarchy_mapping(path: Path) -> dict[str, tuple[str, ...]]:
+    """Load config/system_hierarchy_mapping.json: system slug -> normalized
+    candidate top-level Z-Anatomy collection names. Missing file -> empty
+    mapping (classify_hierarchical then falls straight through to the
+    keyword fallback for everything)."""
+    if not path.exists():
+        return {}
+    with path.open("r", encoding="utf-8") as f:
+        raw = json.load(f)
+    if not isinstance(raw, dict):
+        raise ValueError(f"{path} must contain a JSON object of system -> [candidate names]")
+    return {str(k): tuple(str(v).lower() for v in values) for k, values in raw.items()}
+
+
+_SYSTEM_NAME_NOISE = re.compile(r"[^a-z0-9 ]+")
+
+
+def _normalize_system_name(name: str) -> str:
+    return _SYSTEM_NAME_NOISE.sub("", name.lower()).strip()
+
+
+def classify_by_top_level_name(
+    top_level_name: str, hierarchy_mapping: dict[str, tuple[str, ...]]
+) -> str:
+    """Classify using ONLY the curated top-level-collection-name table —
+    never a substring scan of a leaf name or a concatenated path. This is
+    tier 1 (highest priority): it trusts Z-Anatomy's own authored
+    hierarchy instead of re-deriving system membership from text."""
+    normalized = _normalize_system_name(top_level_name)
+    for system, candidates in hierarchy_mapping.items():
+        if normalized in candidates and system in BODY_SYSTEMS:
+            return system
+    return UNCLASSIFIED
+
+
+def classify_hierarchical(
+    top_level_name: str,
+    leaf_name: str,
+    hierarchy_mapping: dict[str, tuple[str, ...]],
+    keyword_mapping: dict[str, str],
+) -> str:
+    """Three-tier classification, in priority order:
+
+    1. Hierarchy: does the structure's TOP-LEVEL ancestor collection name
+       match a known system in config/system_hierarchy_mapping.json?
+    2. (explicit mapping is tier 1 itself — config/system_hierarchy_mapping.json
+       IS the explicit mapping; there is no separate tier here by design,
+       since maintaining two "explicit" tables would just reintroduce the
+       ambiguity this fix removes)
+    3. Keyword fallback: classify_model() against the LEAF name only
+       (never the full path), for structures whose top-level ancestor
+       isn't in the curated table yet.
+    """
+    hierarchy_result = classify_by_top_level_name(top_level_name, hierarchy_mapping)
+    if hierarchy_result != UNCLASSIFIED:
+        return hierarchy_result
+    return classify_model(leaf_name, keyword_mapping)
 
 
 def ensure_output_dirs(models_dir: Path) -> None:
@@ -171,6 +244,8 @@ class CollectionExportResult:
     status: ProcessStatus
     reason: str = ""
     elapsed_seconds: float = 0.0
+    warnings: list[str] = field(default_factory=list)
+    preview: Path | None = None
 
     @staticmethod
     def from_dict(data: dict) -> CollectionExportResult:
@@ -182,6 +257,8 @@ class CollectionExportResult:
             status=data["status"],
             reason=data.get("reason", ""),
             elapsed_seconds=float(data.get("elapsed_seconds", 0.0)),
+            warnings=list(data.get("warnings", [])),
+            preview=Path(data["preview"]) if data.get("preview") else None,
         )
 
     def to_dict(self) -> dict:
@@ -192,6 +269,8 @@ class CollectionExportResult:
             "output": str(self.output) if self.output else None,
             "status": self.status,
             "reason": self.reason,
+            "warnings": self.warnings,
+            "preview": str(self.preview) if self.preview else None,
             "elapsed_seconds": self.elapsed_seconds,
         }
 

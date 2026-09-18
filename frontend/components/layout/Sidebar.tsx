@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronsLeftIcon, StarIcon } from "@/components/ui/icons";
@@ -17,8 +17,14 @@ interface SidebarProps {
 
 export function Sidebar({ open, onClose }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(false);
-  const pathname = usePathname();
-  const { isBookmarked } = useBookmarks();
+const [mounted, setMounted] = useState(false);
+
+useEffect(() => {
+  setMounted(true);
+}, []);
+
+const pathname = usePathname();
+const { isBookmarked } = useBookmarks();
 
   return (
     <>
@@ -68,7 +74,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
                 {ANATOMY_SYSTEMS.map((system) => {
                   const href = `/anatomy/${system.id}`;
                   const isActive = pathname === href;
-                  const bookmarked = isBookmarked(system.id);
+                  const bookmarked = mounted && isBookmarked(system.id);
 
                   return (
                     <li key={system.id} className={collapsed ? "" : "w-full"}>

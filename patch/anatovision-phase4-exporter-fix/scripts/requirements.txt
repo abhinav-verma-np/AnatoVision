@@ -1,0 +1,12 @@
+# AnatoVision Z-Anatomy asset pipeline — Python dependencies.
+#
+# Blender is NOT pip-installable — it's a separate application. Install it
+# from https://www.blender.org/download/ and ensure `blender` is on PATH,
+# or pass --blender-exe / set the BLENDER_EXE environment variable.
+#
+# Draco/Meshopt compression uses the `gltf-transform` CLI (Node/npm), not
+# a Python package — see scripts/compression.py. Optional:
+#   npm install -g @gltf-transform/cli
+
+trimesh>=4.4,<5.0
+numpy>=1.26,<3.0

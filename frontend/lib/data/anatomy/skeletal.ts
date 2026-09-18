@@ -12,6 +12,7 @@ export const skeletal: AnatomySystem = {
       id: "femur",
       name: "Femur",
       description: "The longest and strongest bone, extending from hip to knee.",
+      manifestAliases: ["bones-of-free-lower-limb", "bones-of-lower-limb"],
     },
     {
       id: "vertebrae",

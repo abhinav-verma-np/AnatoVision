@@ -1,0 +1,1 @@
+"""AnatoVision FastAPI application package."""

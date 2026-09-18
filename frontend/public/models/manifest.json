@@ -154,20 +154,10 @@
     "path": "/models/unclassified/anterior-teeth.glb",
     "system": "unclassified"
   },
-  "anterolateral-surface-of-arytenoid-cartilage": {
-    "available": true,
-    "path": "/models/unclassified/anterolateral-surface-of-arytenoid-cartilage.glb",
-    "system": "unclassified"
-  },
   "appendicular-skeleton": {
     "available": true,
     "path": "/models/skeletal/appendicular-skeleton.glb",
     "system": "skeletal"
-  },
-  "arytenoid-cartilage": {
-    "available": true,
-    "path": "/models/unclassified/arytenoid-cartilage.glb",
-    "system": "unclassified"
   },
   "atlas": {
     "available": true,
@@ -209,11 +199,6 @@
     "path": "/models/unclassified/base-of-arythenoid-cartilage.glb",
     "system": "unclassified"
   },
-  "basilar-part-of-occipital-bone": {
-    "available": true,
-    "path": "/models/skeletal/basilar-part-of-occipital-bone.glb",
-    "system": "skeletal"
-  },
   "bifurcate-ligament": {
     "available": true,
     "path": "/models/skeletal/bifurcate-ligament.glb",
@@ -227,11 +212,6 @@
   "body-of-rib": {
     "available": true,
     "path": "/models/skeletal/body-of-rib.glb",
-    "system": "skeletal"
-  },
-  "body-of-sphenoid-bone": {
-    "available": true,
-    "path": "/models/skeletal/body-of-sphenoid-bone.glb",
     "system": "skeletal"
   },
   "bones-of-free-lower-limb": {
@@ -494,11 +474,6 @@
     "path": "/models/respiratory/crico-arythenoid-joint.glb",
     "system": "respiratory"
   },
-  "cricoid-cartilage": {
-    "available": true,
-    "path": "/models/unclassified/cricoid-cartilage.glb",
-    "system": "unclassified"
-  },
   "cross-section-planes": {
     "available": true,
     "path": "/models/unclassified/cross-section-planes.glb",
@@ -599,11 +574,6 @@
     "path": "/models/muscular/erector-spinae.glb",
     "system": "muscular"
   },
-  "external-surface-of-squamous-part-of-frontal-bone": {
-    "available": true,
-    "path": "/models/skeletal/external-surface-of-squamous-part-of-frontal-bone.glb",
-    "system": "skeletal"
-  },
   "extracranial-bones-of-head": {
     "available": true,
     "path": "/models/skeletal/extracranial-bones-of-head.glb",
@@ -647,11 +617,6 @@
   "femoral-region": {
     "available": true,
     "path": "/models/unclassified/femoral-region.glb",
-    "system": "unclassified"
-  },
-  "fibrous-joints": {
-    "available": true,
-    "path": "/models/unclassified/fibrous-joints.glb",
     "system": "unclassified"
   },
   "fibrous-joints-of-free-lower-limb": {
@@ -713,11 +678,6 @@
     "available": true,
     "path": "/models/nervous/fourth-ventricle.glb",
     "system": "nervous"
-  },
-  "frontal-bone": {
-    "available": true,
-    "path": "/models/skeletal/frontal-bone.glb",
-    "system": "skeletal"
   },
   "frontal-lobe": {
     "available": true,
@@ -824,11 +784,6 @@
     "path": "/models/nervous/hippocampus.glb",
     "system": "nervous"
   },
-  "hyoid-bone": {
-    "available": true,
-    "path": "/models/skeletal/hyoid-bone.glb",
-    "system": "skeletal"
-  },
   "hypaxial-muscles-of-back": {
     "available": true,
     "path": "/models/muscular/hypaxial-muscles-of-back.glb",
@@ -923,11 +878,6 @@
     "available": true,
     "path": "/models/nervous/internal-capsule.glb",
     "system": "nervous"
-  },
-  "internal-surface-of-frontal-bone": {
-    "available": true,
-    "path": "/models/skeletal/internal-surface-of-frontal-bone.glb",
-    "system": "skeletal"
   },
   "interosseus-intercarpal-ligaments": {
     "available": true,
@@ -1033,11 +983,6 @@
     "available": true,
     "path": "/models/unclassified/lateral-meniscus.glb",
     "system": "unclassified"
-  },
-  "lateral-part-of-occipital-bone": {
-    "available": true,
-    "path": "/models/skeletal/lateral-part-of-occipital-bone.glb",
-    "system": "skeletal"
   },
   "lateral-pectoral-nerve": {
     "available": true,
@@ -1289,11 +1234,6 @@
     "path": "/models/unclassified/nail-plate.glb",
     "system": "unclassified"
   },
-  "nasal-part-of-frontal-bone": {
-    "available": true,
-    "path": "/models/skeletal/nasal-part-of-frontal-bone.glb",
-    "system": "skeletal"
-  },
   "nasal-region": {
     "available": true,
     "path": "/models/unclassified/nasal-region.glb",
@@ -1374,20 +1314,10 @@
     "path": "/models/unclassified/oral-region.glb",
     "system": "unclassified"
   },
-  "orbital-part-of-frontal-bone": {
-    "available": true,
-    "path": "/models/skeletal/orbital-part-of-frontal-bone.glb",
-    "system": "skeletal"
-  },
   "orbital-region": {
     "available": true,
     "path": "/models/unclassified/orbital-region.glb",
     "system": "unclassified"
-  },
-  "orbital-surface-of-frontal-bone": {
-    "available": true,
-    "path": "/models/skeletal/orbital-surface-of-frontal-bone.glb",
-    "system": "skeletal"
   },
   "orientations": {
     "available": true,
@@ -1443,11 +1373,6 @@
     "available": true,
     "path": "/models/unclassified/peritoneal-structures.glb",
     "system": "unclassified"
-  },
-  "petrous-part-of-temporal-bone": {
-    "available": true,
-    "path": "/models/skeletal/petrous-part-of-temporal-bone.glb",
-    "system": "skeletal"
   },
   "phalanges-of-foot": {
     "available": true,
@@ -1744,25 +1669,10 @@
     "path": "/models/cardiovascular/septum-pellucidum.glb",
     "system": "cardiovascular"
   },
-  "sinus-of-frontal-bone": {
-    "available": true,
-    "path": "/models/skeletal/sinus-of-frontal-bone.glb",
-    "system": "skeletal"
-  },
-  "sinus-of-sphenoid-bone": {
-    "available": true,
-    "path": "/models/skeletal/sinus-of-sphenoid-bone.glb",
-    "system": "skeletal"
-  },
   "sole": {
     "available": true,
     "path": "/models/unclassified/sole.glb",
     "system": "unclassified"
-  },
-  "sphenoid-bone": {
-    "available": true,
-    "path": "/models/skeletal/sphenoid-bone.glb",
-    "system": "skeletal"
   },
   "spinal-dura": {
     "available": true,
@@ -1773,16 +1683,6 @@
     "available": true,
     "path": "/models/nervous/spinal-nerves.glb",
     "system": "nervous"
-  },
-  "squamous-part-of-frontal-bone": {
-    "available": true,
-    "path": "/models/skeletal/squamous-part-of-frontal-bone.glb",
-    "system": "skeletal"
-  },
-  "squamous-part-of-occipital-bone": {
-    "available": true,
-    "path": "/models/skeletal/squamous-part-of-occipital-bone.glb",
-    "system": "skeletal"
   },
   "stapes": {
     "available": true,
@@ -1949,11 +1849,6 @@
     "path": "/models/nervous/temporal-lobe.glb",
     "system": "nervous"
   },
-  "temporal-surface-of-frontal-bone": {
-    "available": true,
-    "path": "/models/skeletal/temporal-surface-of-frontal-bone.glb",
-    "system": "skeletal"
-  },
   "temporomandibular-joint": {
     "available": true,
     "path": "/models/skeletal/temporomandibular-joint.glb",
@@ -2003,11 +1898,6 @@
     "available": true,
     "path": "/models/respiratory/thyrohyoid-membrane.glb",
     "system": "respiratory"
-  },
-  "thyroid-cartilage": {
-    "available": true,
-    "path": "/models/unclassified/thyroid-cartilage.glb",
-    "system": "unclassified"
   },
   "tibial-collateral-ligament": {
     "available": true,

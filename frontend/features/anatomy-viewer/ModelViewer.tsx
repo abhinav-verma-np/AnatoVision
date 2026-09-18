@@ -3,7 +3,14 @@
 import { Component, Suspense, type ReactNode } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls, useGLTF } from "@react-three/drei";
+import * as THREE from "three";
 import { AlertTriangleIcon } from "@/components/ui/icons";
+
+// Three.js Color Management is enabled by default in modern versions, but
+// asserted explicitly here so vertex colors / baseColor textures exported
+// from Blender are interpreted in the correct (sRGB) space rather than
+// risking a gamma mismatch that reads as washed-out/white.
+THREE.ColorManagement.enabled = true;
 
 interface ModelViewerProps {
   /** Web-relative path from manifest.json, e.g. "/models/cardiovascular/heart.glb" */
@@ -14,6 +21,11 @@ interface ModelViewerProps {
 
 function Model({ path }: { path: string }) {
   const { scene } = useGLTF(path);
+  // <primitive> renders the parsed GLTF scene graph exactly as loaded —
+  // it does NOT wrap meshes in a fresh <mesh>/<meshStandardMaterial>,
+  // which would replace the original glTF materials with a default
+  // (white) one. This is the one part of the fix that was already
+  // correct; kept as-is and documented rather than changed.
   return <primitive object={scene} />;
 }
 
@@ -88,6 +100,15 @@ class ModelErrorBoundary extends Component<BoundaryProps, BoundaryState> {
  * HDRI textures from an external CDN by default — lighting here is a
  * plain ambient + two directional lights instead, so the viewer has no
  * runtime dependency beyond the model file itself.
+ *
+ * Color management: `gl.outputColorSpace` is set explicitly to sRGB (the
+ * correct display space for glTF baseColor/vertex-color data) and tone
+ * mapping is ACESFilmic with modest exposure — this compresses bright
+ * highlights gracefully instead of hard-clipping them to white, which is
+ * the classic cause of a PBR model looking "washed out" or solid white
+ * in a renderer whose color pipeline isn't configured. Light intensities
+ * are kept moderate for the same reason: enough to reveal form and
+ * material color without overdriving exposure.
  */
 export function ModelViewer({ path, label }: ModelViewerProps) {
   return (
@@ -98,10 +119,16 @@ export function ModelViewer({ path, label }: ModelViewerProps) {
             camera={{ position: [0, 0, 3], fov: 45 }}
             dpr={[1, 2]}
             aria-label={`Interactive 3D model of ${label}`}
+            gl={{
+              toneMapping: THREE.ACESFilmicToneMapping,
+              toneMappingExposure: 1,
+              outputColorSpace: THREE.SRGBColorSpace,
+              antialias: true,
+            }}
           >
-            <ambientLight intensity={0.7} />
-            <directionalLight position={[3, 5, 2]} intensity={1.2} />
-            <directionalLight position={[-3, -2, -4]} intensity={0.4} />
+            <ambientLight intensity={0.6} />
+            <directionalLight position={[3, 5, 2]} intensity={1} />
+            <directionalLight position={[-3, -2, -4]} intensity={0.35} />
             <Center>
               <Model path={path} />
             </Center>
