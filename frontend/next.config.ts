@@ -14,7 +14,6 @@ const nextConfig: NextConfig = {
   // Standalone output keeps the Docker runtime image small (see
   // docker/../frontend/Dockerfile) by tracing only the files each route
   // actually needs instead of shipping the full node_modules tree.
-  output: "standalone",
 
   // Fails the production build on type errors instead of silently shipping
   // broken code — this is an educational platform, correctness first.
