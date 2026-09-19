@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     "A free, open educational platform for exploring human anatomy through X-ray, CT, MRI, Ultrasound, and other imaging modalities. No login required.",
   metadataBase: new URL("https://anatovision.dpdns.org"),
   icons: {
-    icon: "/favicon.svg",
+    icon: "https://img.abhinavverma.com.np/anstovision-logo.png",
   },
 };
 

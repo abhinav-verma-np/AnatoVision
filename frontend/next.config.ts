@@ -1,3 +1,4 @@
+import path from "node:path";
 import type { NextConfig } from "next";
 
 /**
@@ -10,6 +11,16 @@ import type { NextConfig } from "next";
  */
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  outputFileTracingRoot: path.join(__dirname, ".."),
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.abhinavverma.com.np",
+        pathname: "/anstovision-logo.png",
+      },
+    ],
+  },
 
   // Standalone output keeps the Docker runtime image small (see
   // docker/../frontend/Dockerfile) by tracing only the files each route

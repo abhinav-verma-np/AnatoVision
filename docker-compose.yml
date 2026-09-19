@@ -39,7 +39,7 @@ services:
       APP_ENV: ${APP_ENV:-development}
       DATABASE_URL: postgresql://${POSTGRES_USER:-anatovision}:${POSTGRES_PASSWORD:-anatovision}@postgres:5432/${POSTGRES_DB:-anatovision}
       REDIS_URL: redis://redis:6379/0
-      CORS_ORIGINS: http://localhost:${FRONTEND_PORT:-3000}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:${FRONTEND_PORT:-3000}}
     ports:
       - "${BACKEND_PORT:-8000}:8000"
     depends_on:

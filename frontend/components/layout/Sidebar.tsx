@@ -20,7 +20,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
 const [mounted, setMounted] = useState(false);
 
 useEffect(() => {
-  setMounted(true);
+  queueMicrotask(() => setMounted(true));
 }, []);
 
 const pathname = usePathname();

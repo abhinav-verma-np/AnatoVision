@@ -2,7 +2,7 @@
 
 import { Component, Suspense, type ReactNode } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Center, OrbitControls, useGLTF } from "@react-three/drei";
+import { Bounds, Center, OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import { AlertTriangleIcon } from "@/components/ui/icons";
 
@@ -129,9 +129,11 @@ export function ModelViewer({ path, label }: ModelViewerProps) {
             <ambientLight intensity={0.6} />
             <directionalLight position={[3, 5, 2]} intensity={1} />
             <directionalLight position={[-3, -2, -4]} intensity={0.35} />
-            <Center>
-              <Model path={path} />
-            </Center>
+            <Bounds fit clip observe margin={1.2}>
+              <Center>
+                <Model path={path} />
+              </Center>
+            </Bounds>
             <OrbitControls enablePan enableZoom enableRotate makeDefault />
           </Canvas>
         </Suspense>

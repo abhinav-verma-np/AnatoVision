@@ -1,4 +1,5 @@
 import type { useApiStatus } from "@/hooks/useApiStatus";
+import Image from "next/image";
 import { MenuIcon, PanelRightIcon, UserIcon } from "@/components/ui/icons";
 import { SearchBar } from "@/components/ui/SearchBar";
 import { ConnectionBadge } from "@/features/connection-status/ConnectionBadge";
@@ -27,9 +28,14 @@ export function TopNav({ apiStatus, onToggleSidebar, onToggleInfoPanel }: TopNav
 
       {/* Logo */}
       <div className="flex flex-none items-center gap-2">
-        <div className="flex size-7 items-center justify-center rounded-control bg-accent-soft font-mono text-xs font-semibold text-accent">
-          AV
-        </div>
+        <Image
+          src="https://img.abhinavverma.com.np/anstovision-logo.png"
+          alt="AnatoVision"
+          width={28}
+          height={28}
+          unoptimized
+          className="size-7 rounded-control object-cover"
+        />
         <span className="hidden text-sm font-semibold tracking-tight text-ink sm:inline">
           AnatoVision
         </span>
