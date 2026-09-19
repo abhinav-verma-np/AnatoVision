@@ -29,13 +29,15 @@ class Settings(BaseSettings):
     # the frontend's connection test (requirement #4) would fail purely on
     # a CORS rejection, not a real backend-down state.
     cors_origins: str = Field(
-        default="http://localhost:3000",
+        default="http://localhost:3000,https://anatovision.dpdns.org",
         alias="CORS_ORIGINS",
     )
 
     @property
     def cors_origin_list(self) -> list[str]:
-        return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
+        configured = [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
+        public_origin = "https://anatovision.dpdns.org"
+        return list(dict.fromkeys([*configured, public_origin]))
 
 
 @lru_cache
