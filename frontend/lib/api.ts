@@ -7,11 +7,10 @@
  */
 
 const DEFAULT_TIMEOUT_MS = 5000;
-const PRODUCTION_API_URL = "https://anatovision.onrender.com";
 
 export const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "") ??
-  (process.env.NODE_ENV === "production" ? PRODUCTION_API_URL : "http://localhost:8000");
+  (process.env.NODE_ENV === "production" ? "/api/backend" : "http://localhost:8000");
 
 export class ApiError extends Error {
   constructor(
