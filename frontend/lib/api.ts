@@ -9,7 +9,8 @@
 const DEFAULT_TIMEOUT_MS = 5000;
 
 export const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "") ?? "http://localhost:8000";
+  process.env.NEXT_PUBLIC_API_URL?.replace(/\/+$/, "") ??
+  (process.env.NODE_ENV === "production" ? "/api/backend" : "http://localhost:8000");
 
 export class ApiError extends Error {
   constructor(
