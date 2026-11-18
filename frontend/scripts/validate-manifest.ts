@@ -8,7 +8,15 @@
  * Exits non-zero if any check fails, so it can be wired into CI later.
  */
 
-import { existsSync, globSync, readFileSync, statSync } from "node:fs";
+import {
+  closeSync,
+  existsSync,
+  globSync,
+  openSync,
+  readFileSync,
+  readSync,
+  statSync,
+} from "node:fs";
 import path from "node:path";
 import { ANATOMY_SYSTEMS } from "../lib/data/anatomy";
 import { resolveModel } from "../lib/modelResolver";
@@ -53,7 +61,10 @@ function validateManifestShape(manifest: Record<string, unknown>): Issue[] {
   const issues: Issue[] = [];
   for (const [key, entry] of Object.entries(manifest)) {
     if (typeof entry !== "object" || entry === null) {
-      issues.push({ severity: "error", message: `Malformed entry "${key}": not an object` });
+      issues.push({
+        severity: "error",
+        message: `Malformed entry "${key}": not an object`,
+      });
       continue;
     }
     const e = entry as Record<string, unknown>;
@@ -96,6 +107,77 @@ function validatePathsExistOnDisk(manifest: Manifest): Issue[] {
   return issues;
 }
 
+function hasRenderableGeometry(glbPath: string): boolean {
+  const fileSize = statSync(glbPath).size;
+  const fd = openSync(glbPath, "r");
+  try {
+    const header = Buffer.alloc(20);
+    if (readSync(fd, header, 0, header.length, 0) !== header.length) return false;
+    if (
+      header.toString("ascii", 0, 4) !== "glTF" ||
+      header.readUInt32LE(4) !== 2 ||
+      header.readUInt32LE(8) !== fileSize ||
+      header.toString("ascii", 16, 20) !== "JSON"
+    ) {
+      return false;
+    }
+
+    const jsonLength = header.readUInt32LE(12);
+    if (jsonLength > fileSize - header.length) return false;
+
+    const jsonBuffer = Buffer.alloc(jsonLength);
+    if (readSync(fd, jsonBuffer, 0, jsonLength, header.length) !== jsonLength)
+      return false;
+    const document: unknown = JSON.parse(
+      jsonBuffer.toString("utf8").replace(/[\u0000 ]+$/g, ""),
+    );
+    if (typeof document !== "object" || document === null || !("meshes" in document)) {
+      return false;
+    }
+
+    const { meshes, accessors } = document as {
+      meshes?: Array<{ primitives?: Array<{ attributes?: { POSITION?: number } }> }>;
+      accessors?: Array<{ count?: number }>;
+    };
+    return Boolean(
+      meshes?.some((mesh) =>
+        mesh.primitives?.some((primitive) => {
+          const positionIndex = primitive.attributes?.POSITION;
+          return (
+            typeof positionIndex === "number" &&
+            Number.isInteger(positionIndex) &&
+            positionIndex >= 0 &&
+            (accessors?.[positionIndex]?.count ?? 0) > 0
+          );
+        }),
+      ),
+    );
+  } catch {
+    return false;
+  } finally {
+    closeSync(fd);
+  }
+}
+
+function validateAvailableModelsContainGeometry(manifest: Manifest): Issue[] {
+  const issues: Issue[] = [];
+  for (const [key, entry] of Object.entries(manifest)) {
+    if (entry?.available !== true || typeof entry.path !== "string") continue;
+    const absolute = path.join(MODELS_DIR, entry.path.replace(/^\/models\//, ""));
+    if (
+      existsSync(absolute) &&
+      statSync(absolute).isFile() &&
+      !hasRenderableGeometry(absolute)
+    ) {
+      issues.push({
+        severity: "error",
+        message: `Manifest entry "${key}" claims available:true, but its GLB contains no renderable mesh geometry: ${entry.path}`,
+      });
+    }
+  }
+  return issues;
+}
+
 function validateNoDuplicatePaths(manifest: Manifest): Issue[] {
   const issues: Issue[] = [];
   const seen = new Map<string, string>();
@@ -118,7 +200,9 @@ function validateGlbsRepresentedInManifest(manifest: Manifest): Issue[] {
   const issues: Issue[] = [];
   const manifestPaths = new Set(
     Object.values(manifest)
-      .map((e) => (typeof e?.path === "string" ? e.path.replace(/^\/models\//, "") : null))
+      .map((e) =>
+        typeof e?.path === "string" ? e.path.replace(/^\/models\//, "") : null,
+      )
       .filter((p): p is string => p !== null),
   );
   for (const glb of findAllGlbFiles()) {
@@ -194,6 +278,7 @@ function main(): void {
   const allIssues: Issue[] = [
     ...shapeIssues,
     ...validatePathsExistOnDisk(manifest),
+    ...validateAvailableModelsContainGeometry(manifest),
     ...validateNoDuplicatePaths(manifest),
     ...validateGlbsRepresentedInManifest(manifest),
     ...validateNoFalseAvailability(manifest),

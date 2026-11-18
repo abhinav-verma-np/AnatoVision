@@ -10,18 +10,18 @@
    ========================================================================== */
 @theme {
   /* Surfaces */
-  --color-background: #0a0d12;
-  --color-panel: #11161d;
-  --color-panel-elevated: #161c25;
+  --color-background: #212121;
+  --color-panel: #2b2b2b;
+  --color-panel-elevated: #353535;
 
   /* Structure */
-  --color-line: #232b36;
-  --color-line-strong: #303b49;
+  --color-line: #424242;
+  --color-line-strong: #565656;
 
   /* Typography */
-  --color-ink: #e7ebf1;
-  --color-ink-muted: #92a0b0;
-  --color-ink-subtle: #5c6b7c;
+  --color-ink: #e6e6e6;
+  --color-ink-muted: #b0b0b0;
+  --color-ink-subtle: #858585;
 
   /* Accent — used sparingly: active states, focus, links, status */
   --color-accent: #3fb6d9;

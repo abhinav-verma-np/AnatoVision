@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
-import { useApiStatus } from "@/hooks/useApiStatus";
 import { getSystemById, type KeyStructure } from "@/lib/data/anatomy";
 import { TopNav } from "@/components/layout/TopNav";
 import { Sidebar } from "@/components/layout/Sidebar";
@@ -23,16 +22,13 @@ import { RightInspector } from "@/components/layout/RightInspector";
  * single, uniform way to jump straight to a structure (system + structure
  * in one navigation) without a second selection mechanism.
  *
- * One useApiStatus() poll lives here and is shared by the nav's
- * ConnectionBadge. Manifest loading is NOT lifted here — useManifest()
- * caches at module scope, so ViewerWorkspace/RightInspector/SearchBar
- * each calling it independently costs one network request total, not one
- * per component.
+ * Manifest loading is NOT lifted here — useManifest() caches at module
+ * scope, so ViewerWorkspace/RightInspector/SearchBar each calling it
+ * independently costs one network request total, not one per component.
  */
 export function AppShell() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [infoPanelOpen, setInfoPanelOpen] = useState(false);
-  const apiStatus = useApiStatus();
   const router = useRouter();
 
   const params = useParams<{ system?: string }>();
@@ -43,7 +39,8 @@ export function AppShell() {
 
   const structureId = searchParams.get("structure");
   const selectedStructure: KeyStructure | null =
-    (system && structureId && system.keyStructures.find((s) => s.id === structureId)) || null;
+    (system && structureId && system.keyStructures.find((s) => s.id === structureId)) ||
+    null;
 
   function handleSelectStructure(structure: KeyStructure) {
     if (!systemId) return;
@@ -58,7 +55,6 @@ export function AppShell() {
   return (
     <div className="flex h-screen flex-col overflow-hidden">
       <TopNav
-        apiStatus={apiStatus}
         onToggleSidebar={() => setSidebarOpen((v) => !v)}
         onToggleInfoPanel={() => setInfoPanelOpen((v) => !v)}
       />
@@ -73,7 +69,6 @@ export function AppShell() {
         <RightInspector
           open={infoPanelOpen}
           onClose={() => setInfoPanelOpen(false)}
-          apiStatus={apiStatus}
           system={system}
           selectedStructure={selectedStructure}
           onSelectStructure={handleSelectStructure}

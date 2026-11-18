@@ -1,50 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import type { useApiStatus } from "@/hooks/useApiStatus";
 import { useManifest } from "@/hooks/useManifest";
 import { getSystemById, type AnatomySystem, type KeyStructure } from "@/lib/data/anatomy";
 import { resolveModel } from "@/lib/modelResolver";
 import { useBookmarks } from "@/lib/bookmarks";
 import { SectionCard } from "@/components/ui/SectionCard";
-import { StatusDot } from "@/components/ui/StatusDot";
-import { RefreshIcon, StarIcon } from "@/components/ui/icons";
+import { StarIcon } from "@/components/ui/icons";
 
 interface RightInspectorProps {
   open: boolean;
   onClose: () => void;
-  apiStatus: ReturnType<typeof useApiStatus>;
   system: AnatomySystem | null;
   selectedStructure: KeyStructure | null;
   onSelectStructure: (structure: KeyStructure) => void;
 }
 
-const STATUS_LABEL: Record<string, string> = {
-  checking: "Checking backend…",
-  online: "Backend connected",
-  offline: "Backend unreachable",
-};
-
 /** Right information panel — stacked SectionCards, dynamic per selected
- * body system and structure. System Status reuses the app-wide
- * useApiStatus() poll shared with TopNav's ConnectionBadge; model
- * availability is resolved through the shared manifest hook rather than
- * duplicated here. */
+ * body system and structure. Model availability is resolved through the
+ * shared manifest hook rather than duplicated here. */
 export function RightInspector({
   open,
   onClose,
-  apiStatus,
   system,
   selectedStructure,
   onSelectStructure,
 }: RightInspectorProps) {
-  const { state, lastCheckedAt, refresh } = apiStatus;
   const { isBookmarked, toggleBookmark } = useBookmarks();
   const { manifest } = useManifest();
   const bookmarked = system ? isBookmarked(system.id) : false;
-
-  const selectedModel =
-    selectedStructure && manifest ? resolveModel(manifest, selectedStructure) : undefined;
 
   return (
     <>
@@ -58,7 +42,7 @@ export function RightInspector({
       )}
 
       <aside
-        className={`scroll-thin fixed inset-y-0 right-0 z-30 w-80 flex-none overflow-y-auto border-l border-line bg-panel transition-transform duration-200 ease-out xl:static xl:z-auto xl:translate-x-0 ${
+        className={`scroll-thin border-line bg-panel fixed inset-y-0 right-0 z-30 w-80 flex-none overflow-y-auto border-l transition-transform duration-200 ease-out xl:static xl:z-auto xl:translate-x-0 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -72,10 +56,12 @@ export function RightInspector({
                   onClick={() => toggleBookmark(system.id)}
                   aria-pressed={bookmarked}
                   aria-label={
-                    bookmarked ? `Remove ${system.name} bookmark` : `Bookmark ${system.name}`
+                    bookmarked
+                      ? `Remove ${system.name} bookmark`
+                      : `Bookmark ${system.name}`
                   }
                   title={bookmarked ? "Remove bookmark" : "Bookmark this system"}
-                  className="rounded-control p-1 text-ink-subtle transition-colors hover:text-accent"
+                  className="rounded-control text-ink-subtle hover:text-accent p-1 transition-colors"
                 >
                   <StarIcon width={14} height={14} filled={bookmarked} />
                 </button>
@@ -94,30 +80,12 @@ export function RightInspector({
               <dl className="space-y-2 text-xs">
                 <div>
                   <dt className="text-ink-subtle">Name</dt>
-                  <dd className="mt-0.5 text-ink">{selectedStructure.name}</dd>
+                  <dd className="text-ink mt-0.5">{selectedStructure.name}</dd>
                 </div>
                 <div>
                   <dt className="text-ink-subtle">System</dt>
-                  <dd className="mt-0.5 text-ink-muted">{system.name}</dd>
+                  <dd className="text-ink-muted mt-0.5">{system.name}</dd>
                 </div>
-                <div>
-                  <dt className="text-ink-subtle">Availability</dt>
-                  <dd className="mt-0.5">
-                    {selectedModel?.available ? (
-                      <span className="text-success">3D model available</span>
-                    ) : (
-                      <span className="text-ink-subtle">Not yet available</span>
-                    )}
-                  </dd>
-                </div>
-                {selectedModel?.available && (
-                  <div>
-                    <dt className="text-ink-subtle">Model path</dt>
-                    <dd className="mt-0.5 truncate font-mono text-[11px] text-ink-subtle">
-                      {selectedModel.path}
-                    </dd>
-                  </div>
-                )}
               </dl>
             </SectionCard>
           )}
@@ -128,7 +96,7 @@ export function RightInspector({
                 {system.quickFacts.map(([label, value]) => (
                   <div key={label}>
                     <dt className="text-ink-subtle">{label}</dt>
-                    <dd className="mt-0.5 text-ink-muted">{value}</dd>
+                    <dd className="text-ink-muted mt-0.5">{value}</dd>
                   </div>
                 ))}
               </dl>
@@ -142,14 +110,16 @@ export function RightInspector({
               <ul className="space-y-1.5">
                 {system.keyStructures.map((structure) => {
                   const isActive = selectedStructure?.id === structure.id;
-                  const hasModel = manifest ? resolveModel(manifest, structure)?.available : undefined;
+                  const hasModel = manifest
+                    ? resolveModel(manifest, structure)?.available
+                    : undefined;
                   return (
                     <li key={structure.id}>
                       <button
                         type="button"
                         onClick={() => onSelectStructure(structure)}
                         aria-pressed={isActive}
-                        className={`w-full rounded-control border px-2.5 py-2 text-left text-xs transition-colors ${
+                        className={`rounded-control w-full border px-2.5 py-2 text-left text-xs transition-colors ${
                           isActive
                             ? "border-accent bg-accent-soft"
                             : "border-line hover:border-line-strong"
@@ -162,10 +132,12 @@ export function RightInspector({
                             {structure.name}
                           </span>
                           {hasModel && (
-                            <span className="flex-none text-[10px] text-ink-subtle">3D</span>
+                            <span className="text-ink-subtle flex-none text-[10px]">
+                              3D
+                            </span>
                           )}
                         </span>
-                        <span className="mt-0.5 block text-ink-subtle">
+                        <span className="text-ink-subtle mt-0.5 block">
                           {structure.description}
                         </span>
                       </button>
@@ -189,43 +161,23 @@ export function RightInspector({
                       <Link
                         key={id}
                         href={`/anatomy/${related.id}`}
-                        className="rounded-control border border-line px-2 py-1 text-xs text-ink-muted transition-colors hover:border-line-strong hover:text-ink"
+                        className="rounded-control border-line text-ink-muted hover:border-line-strong hover:text-ink border px-2 py-1 text-xs transition-colors"
                       >
                         {related.shortName}
                       </Link>
                     );
                   })}
                 </div>
-                <p className="text-xs text-ink-subtle">
-                  Flashcards and quizzes for the {system.shortName} System arrive in a later
-                  phase.
+                <p className="text-ink-subtle text-xs">
+                  Flashcards and quizzes for the {system.shortName} System arrive in a
+                  later phase.
                 </p>
               </div>
             ) : (
-              <p>Related systems and study resources appear here once a system is selected.</p>
+              <p>
+                Related systems and study resources appear here once a system is selected.
+              </p>
             )}
-          </SectionCard>
-
-          <SectionCard title="System Status">
-            <div className="flex items-center justify-between gap-2">
-              <div className="flex items-center gap-2">
-                <StatusDot state={state} />
-                <span className="text-ink-muted">{STATUS_LABEL[state]}</span>
-              </div>
-              <button
-                type="button"
-                onClick={refresh}
-                disabled={state === "checking"}
-                aria-label="Recheck backend connection"
-                title="Recheck backend connection"
-                className="rounded-control p-1 text-ink-subtle transition-colors hover:text-ink disabled:opacity-40"
-              >
-                <RefreshIcon width={13} height={13} />
-              </button>
-            </div>
-            <p className="mt-2 font-mono text-[11px] text-ink-subtle">
-              Last checked: {lastCheckedAt ? lastCheckedAt.toLocaleTimeString() : "—"}
-            </p>
           </SectionCard>
         </div>
       </aside>

@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import struct
 from pathlib import Path
 
 from pipeline_common import (
@@ -22,6 +23,62 @@ from pipeline_common import (
     DEFAULT_MODELS_DIR,
     setup_logger,
 )
+
+
+def has_renderable_geometry(glb_path: Path) -> bool:
+    """Return whether a GLB contains at least one non-empty mesh primitive."""
+    try:
+        file_size = glb_path.stat().st_size
+        with glb_path.open("rb") as glb:
+            header = glb.read(20)
+            if len(header) != 20:
+                return False
+
+            magic, version, declared_size, json_size, chunk_type = struct.unpack("<4sIII4s", header)
+            if (
+                magic != b"glTF"
+                or version != 2
+                or declared_size != file_size
+                or chunk_type != b"JSON"
+                or json_size > file_size - 20
+            ):
+                return False
+
+            document = json.loads(glb.read(json_size).decode("utf-8").rstrip(" \0"))
+
+        if not isinstance(document, dict):
+            return False
+        accessors = document.get("accessors", [])
+        meshes = document.get("meshes", [])
+        if not isinstance(accessors, list) or not isinstance(meshes, list):
+            return False
+
+        for mesh in meshes:
+            if not isinstance(mesh, dict):
+                continue
+            primitives = mesh.get("primitives", [])
+            if not isinstance(primitives, list):
+                continue
+            for primitive in primitives:
+                if not isinstance(primitive, dict):
+                    continue
+                attributes = primitive.get("attributes", {})
+                if not isinstance(attributes, dict):
+                    continue
+                position_index = attributes.get("POSITION")
+                if (
+                    not isinstance(position_index, int)
+                    or isinstance(position_index, bool)
+                    or not 0 <= position_index < len(accessors)
+                ):
+                    continue
+                accessor = accessors[position_index]
+                if isinstance(accessor, dict) and accessor.get("count", 0) > 0:
+                    return True
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError, struct.error, TypeError):
+        return False
+
+    return False
 
 
 def generate_manifest(models_dir: Path) -> dict[str, dict[str, object]]:
@@ -51,7 +108,7 @@ def generate_manifest(models_dir: Path) -> dict[str, dict[str, object]]:
             manifest[slug] = {
                 "system": system,
                 "path": web_path,
-                "available": True,
+                "available": has_renderable_geometry(glb_path),
             }
 
     return manifest
@@ -79,6 +136,9 @@ def main() -> None:
     write_manifest(manifest, args.manifest)
 
     logger.info("Manifest written: %s (%d models)", args.manifest, len(manifest))
+    for slug, entry in sorted(manifest.items()):
+        if not entry["available"]:
+            logger.warning("Model %s is not available: GLB contains no renderable geometry", slug)
     for slug, entry in sorted(manifest.items()):
         logger.debug("  %s -> %s", slug, entry["path"])
 
