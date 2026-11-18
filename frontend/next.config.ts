@@ -1,4 +1,3 @@
-import path from "node:path";
 import type { NextConfig } from "next";
 
 /**
@@ -11,7 +10,6 @@ import type { NextConfig } from "next";
  */
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  outputFileTracingRoot: path.join(__dirname),
   output: process.env.VERCEL ? undefined : "standalone",
   images: {
     remotePatterns: [
