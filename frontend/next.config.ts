@@ -12,7 +12,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   outputFileTracingRoot: path.join(__dirname),
-  output: "standalone",
+  output: process.env.VERCEL ? undefined : "standalone",
   images: {
     remotePatterns: [
       {
