@@ -4,7 +4,7 @@
 medical imaging** — X-ray, CT, MRI, Ultrasound, PET/SPECT, Angiography,
 Mammography, and Fluoroscopy — built on open educational datasets.
 
-🔗 **anatovision.dpdns.org**
+
 
 > AnatoVision is **not** a diagnostic tool. It's built for medical,
 > nursing, and radiology students, anatomy learners, and healthcare
@@ -13,7 +13,7 @@ Mammography, and Fluoroscopy — built on open educational datasets.
 
 ---
 
-## Status: Phase 1 — Foundation
+## Status: Phase 1 - Foundation
 
 This repository currently contains the **project foundation only**: the
 monorepo skeleton, the locked application shell (UI, no content yet), and
@@ -25,7 +25,7 @@ quizzes exist yet — see [Roadmap](#roadmap).
 - **Free forever.** No login, no signup, no accounts, no payment system.
 - **No tracking** beyond optional, essential anonymous analytics later.
 - **Local-first for personal data.** Bookmarks, quiz progress, and
-  preferences live in the browser's `localStorage` — never an account.
+  preferences live in the browser's `localStorage` - never an account.
 - **Open datasets only** (TCIA, NIH Chest X-ray, Open Anatomy, Visible
   Human Project, MedPix, Radiopaedia where licensing permits). See
   [`datasets/README.md`](./datasets/README.md).
